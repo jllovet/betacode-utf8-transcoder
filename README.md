@@ -22,6 +22,19 @@ go get github.com/jllovet/betacode-utf8-transcoder
 - [The Go Blog - Text normalization in Go](https://blog.golang.org/normalization)
 - [Unicode Programming - Unicode Normalization in Go](https://unicode-programming.readthedocs.io/en/latest/normalization/go/)
 
+### Trie Data Structure
+
+#### Videos
+
+- [YouTube - HackerRank - Data Structures: Tries](https://www.youtube.com/watch?v=zIjfhVPRZCg)
+- [YouTube - Jacob Sorber - The Trie Data Structure (Prefix Tree)](https://www.youtube.com/watch?v=3CbFFVHQrk4)
+- [YouTube - Implement Trie | Leetcode #208 - Techn Dose](https://www.youtube.com/watch?v=xqsaAhQC6c8)
+- [YouTube - Tech Dose - Trie Playlist](https://www.youtube.com/watch?v=6PX6wqDQE20&list=PLEJXowNB4kPyi859E6qGUs7jlpQehJndl)
+
+#### Articles
+- [Wikipedia - Trie](https://en.wikipedia.org/wiki/Trie)
+- [Medium - Vaidehi Joshi - Trying to Understand Tries](https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014)
+
 ### Other Beta Code to UTF-8 Transcoders
 - [github.com/matgrioni/betacode](https://github.com/matgrioni/betacode)
 - [github.com/cltk/grc_software_tlgu](https://github.com/cltk/grc_software_tlgu)
