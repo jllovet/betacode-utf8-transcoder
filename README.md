@@ -17,6 +17,11 @@ go get github.com/jllovet/betacode-utf8-transcoder
 - [TLGU - BCM.pdf](http://www.tlg.uci.edu/encoding/BCM.pdf)
 - [TLGU - quickbeta.pdf](http://www.tlg.uci.edu/encoding/quickbeta.pdf)
 
+### Unicode Normalization and Using Unicode in Go
+- [The Go Blog - Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
+- [The Go Blog - Text normalization in Go](https://blog.golang.org/normalization)
+- [Unicode Programming - Unicode Normalization in Go](https://unicode-programming.readthedocs.io/en/latest/normalization/go/)
+
 ### Other Beta Code to UTF-8 Transcoders
 - [github.com/matgrioni/betacode](https://github.com/matgrioni/betacode)
 - [github.com/cltk/grc_software_tlgu](https://github.com/cltk/grc_software_tlgu)
