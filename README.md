@@ -12,6 +12,7 @@ go get github.com/jllovet/betacode-utf8-transcoder
 
 ### Encodings and Transcording Background and Specs
 
+- [Joel on Software - The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [What is Transcoding?](https://en.wikipedia.org/wiki/Transcoding)
 - [Wikipedia - Beta_Code](https://en.wikipedia.org/wiki/Beta_Code)
 - [TLGU - BCM.pdf](http://www.tlg.uci.edu/encoding/BCM.pdf)
