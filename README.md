@@ -17,6 +17,10 @@ go get github.com/jllovet/betacode-utf8-transcoder
 - [TLGU - BCM.pdf](http://www.tlg.uci.edu/encoding/BCM.pdf)
 - [TLGU - quickbeta.pdf](http://www.tlg.uci.edu/encoding/quickbeta.pdf)
 
+### Unicode Normalization
+- [YouTube - Unicode Normalization for NLP in Python - James Briggs](https://www.youtube.com/watch?v=9Od9-DV9kd8)
+- [Medium - What on Earth is Unicode Normalization? - James Briggs](https://towardsdatascience.com/what-on-earth-is-unicode-normalization-56c005c55ad0)
+
 ### Unicode Normalization and Using Unicode in Go
 - [The Go Blog - Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
 - [The Go Blog - Text normalization in Go](https://blog.golang.org/normalization)
