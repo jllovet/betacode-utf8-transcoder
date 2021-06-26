@@ -2,6 +2,8 @@
 
 This package allows you to convert texts that are in Beta Code to UTF-8 and back. Its primary purpose is to support working with Ancient Greek datasets that used Beta Code as their encoding.
 
+This project owes a great deal to [github.com/matgrioni/betacode](https://github.com/matgrioni/betacode), which is an analogous transcoder written in python. Portions of this transcoder are translations of that project into Go, and the goals of our projects are very nearly the same. Thanks, [Matias](https://github.com/matgrioni)!
+
 ## Installation
 
 ```shell
