@@ -26,8 +26,10 @@ func TestUniToBeta(t *testing.T) {
 		{`Let's see if we can convert this: ἔτι δὲ οἱ`, `Let's see if we can convert this: e)/ti de\ oi(`, "Mixed Conversion / Multi-Language"},
 	}
 	for _, table := range tables {
-		u2b := transcoder.UniToBeta(table.uni) // Unicode converted to Betacode
-
+		u2b, err := transcoder.UniToBeta(table.uni) // Unicode converted to Betacode
+		if err != nil {
+			t.Errorf("Error during test %s: %s", table.description, err)
+		}
 		ucbn := norm.NFC.String(u2b)      // Unicode converted to Betacode and Normalized
 		bn := norm.NFC.String(table.beta) // Betacode Normalized
 

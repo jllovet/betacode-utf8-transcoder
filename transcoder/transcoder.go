@@ -12,7 +12,7 @@ import (
 )
 
 // UniToBeta converts a unicode string to a betacode string
-func UniToBeta(uni string) (beta string) {
+func UniToBeta(uni string) (beta string, err error) {
 	u := UNICODE_MAP
 
 	transform := []string{}
@@ -23,6 +23,7 @@ func UniToBeta(uni string) (beta string) {
 				break
 			} else {
 				log.Fatal(err)
+				return "", err
 			}
 		} else {
 			// check whether betacode value in map
@@ -35,11 +36,8 @@ func UniToBeta(uni string) (beta string) {
 			}
 		}
 	}
-	converted := strings.Join(transform, "")
-	return converted
-
-	// beta = string(norm.NFC.String(UNICODE_MAP[uni]))
-	// return beta
+	beta = strings.Join(transform, "")
+	return beta, err
 }
 
 // BetaToUni converts a betacode string to a unicode string
