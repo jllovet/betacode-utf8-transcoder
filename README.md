@@ -20,6 +20,9 @@ go get github.com/jllovet/betacode-utf8-transcoder
 - [TLGU - BCM.pdf](http://www.tlg.uci.edu/encoding/BCM.pdf)
 - [TLGU - quickbeta.pdf](http://www.tlg.uci.edu/encoding/quickbeta.pdf)
 
+### Unicode Resources Online
+- [Fileformat.info](https://www.fileformat.info/info/unicode/)
+- [Unicode Converter](https://www.branah.com/unicode-converter)
 ### Unicode Normalization
 - [YouTube - Unicode Normalization for NLP in Python - James Briggs](https://www.youtube.com/watch?v=9Od9-DV9kd8)
 - [Medium - What on Earth is Unicode Normalization? - James Briggs](https://towardsdatascience.com/what-on-earth-is-unicode-normalization-56c005c55ad0)
