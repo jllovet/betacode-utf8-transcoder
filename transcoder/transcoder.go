@@ -5,5 +5,6 @@ func UniToBeta(uni string) (beta string) {
 }
 
 func BetaToUni(beta string) (uni string) {
-	return beta
+	uni = string(BETACODE_MAP[beta])
+	return uni
 }
