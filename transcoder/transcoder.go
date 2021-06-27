@@ -41,9 +41,9 @@ func UniToBeta(uni string) (beta string, err error) {
 }
 
 // BetaToUni converts a betacode string to a unicode string
-func BetaToUni(beta string) (uni string) {
+func BetaToUni(beta string) (uni string, err error) {
 	uni = string(BETACODE_MAP[beta])
-	return uni
+	return uni, err
 }
 
 // findLongestBetaTokenLen returns the maximum length of a single betacode token

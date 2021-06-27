@@ -76,9 +76,12 @@ func TestBetaToUni(t *testing.T) {
 		{`*)e/foros ka*e)/i\ a/)lloi *)\h|`, `Ἔφορος καἜὶ ἄλλοι ᾛ`, "Unstrict Capitalization"},
 	}
 	for _, table := range tables {
-		b2u := transcoder.BetaToUni(table.beta) // Betacode converted to Unicode
-		bcun := norm.NFC.String(b2u)            // Betacode converted to Unicode and Normalized
-		un := norm.NFC.String(table.uni)        // Unicode Normalized
+		b2u, err := transcoder.BetaToUni(table.beta) // Betacode converted to Unicode
+		if err != nil {
+			t.Errorf("Error during test %s: %s", table.description, err)
+		}
+		bcun := norm.NFC.String(b2u)     // Betacode converted to Unicode and Normalized
+		un := norm.NFC.String(table.uni) // Unicode Normalized
 
 		if bcun != un {
 			t.Errorf(
