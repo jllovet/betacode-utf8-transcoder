@@ -8,8 +8,8 @@ import (
 )
 
 // TestUniToBeta tests that the result of converting unicode is betacode.
-// Comparison is done via the NFKC normalization for unicode.
-// norm.NFKC.String
+// Comparison is done via the NFC normalization for unicode.
+// norm.NFC.String
 func TestUniToBeta(t *testing.T) {
 	t.Parallel()
 	tables := []struct {
@@ -28,8 +28,8 @@ func TestUniToBeta(t *testing.T) {
 	for _, table := range tables {
 		u2b := transcoder.UniToBeta(table.uni) // Unicode converted to Betacode
 
-		ucbn := norm.NFKC.String(u2b)      // Unicode converted to Betacode and Normalized
-		bn := norm.NFKC.String(table.beta) // Betacode Normalized
+		ucbn := norm.NFC.String(u2b)      // Unicode converted to Betacode and Normalized
+		bn := norm.NFC.String(table.beta) // Betacode Normalized
 
 		if ucbn != bn {
 			t.Errorf(
@@ -43,8 +43,8 @@ func TestUniToBeta(t *testing.T) {
 }
 
 // TestBetaToUni tests that the result of converting betacode is unicode.
-// Comparison is done via the NFKC normalization for unicode.
-// norm.NFKC.String
+// Comparison is done via the NFC normalization for unicode.
+// norm.NFC.String
 func TestBetaToUni(t *testing.T) {
 	t.Parallel()
 	tables := []struct {
@@ -75,8 +75,8 @@ func TestBetaToUni(t *testing.T) {
 	}
 	for _, table := range tables {
 		b2u := transcoder.BetaToUni(table.beta) // Betacode converted to Unicode
-		bcun := norm.NFKC.String(b2u)           // Betacode converted to Unicode and Normalized
-		un := norm.NFKC.String(table.uni)       // Unicode Normalized
+		bcun := norm.NFC.String(b2u)            // Betacode converted to Unicode and Normalized
+		un := norm.NFC.String(table.uni)        // Unicode Normalized
 
 		if bcun != un {
 			t.Errorf(

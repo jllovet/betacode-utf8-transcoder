@@ -1,7 +1,12 @@
 package transcoder
 
+import (
+	"golang.org/x/text/unicode/norm"
+)
+
 func UniToBeta(uni string) (beta string) {
-	return uni
+	beta = string(norm.NFC.String(UNICODE_MAP[uni]))
+	return beta
 }
 
 func BetaToUni(beta string) (uni string) {

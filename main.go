@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	cp := string([]rune(transcoder.BETACODE_MAP["s2"]))
-	fmt.Println(cp)
+	fmt.Println(string(transcoder.BetaToUni("s2")))
+	fmt.Println(string(transcoder.UniToBeta("α")))
 }

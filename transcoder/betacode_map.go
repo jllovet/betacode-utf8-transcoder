@@ -149,6 +149,7 @@ var BETACODE_MAP = map[string]string{
 	`*)\\i`: "\u1f3a",
 	`*)\\o`: "\u1f4a",
 	`*)\\u`: "\u1f5a",
+	// '*)\\u':   '\u1f5a',
 	`*)\\w`: "\u1f6a",
 
 	// Rough breathing and acute accent
