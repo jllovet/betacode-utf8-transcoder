@@ -2,325 +2,339 @@ package transcoder
 
 var UNICODE_MAP = map[string]string{
 	// No marks
-	`α`: `a`,  // \u03b1
-	`β`: `b`,  // \u03b2
-	`γ`: `g`,  // \u03b3
-	`δ`: `d`,  // \u03b4
-	`ε`: `e`,  // \u03b5
-	`ζ`: `z`,  // \u03b6
-	`η`: `h`,  // \u03b7
-	`θ`: `q`,  // \u03b8
-	`ι`: `i`,  // \u03b9
-	`κ`: `k`,  // \u03ba
-	`λ`: `l`,  // \u03bb
-	`μ`: `m`,  // \u03bc
-	`ν`: `n`,  // \u03bd
-	`ξ`: `c`,  // \u03be
-	`ο`: `o`,  // \u03bf
-	`π`: `p`,  // \u03c0
-	`ρ`: `r`,  // \u03c1
-	`σ`: `s`,  // \u03c3
-	`ς`: `s2`, // \u03c2
-	`ϲ`: `s3`, // \u03f2
-	`τ`: `t`,  // \u03c4
-	`υ`: `u`,  // \u03c5
-	`φ`: `f`,  // \u03c6
-	`χ`: `x`,  // \u03c7
-	`ψ`: `y`,  // \u03c8
-	`ω`: `w`,  // \u03c9
+	`α`: `a`,  // \u03b1 GREEK SMALL LETTER ALPHA
+	`β`: `b`,  // \u03b2 GREEK SMALL LETTER BETA
+	`γ`: `g`,  // \u03b3 GREEK SMALL LETTER GAMMA
+	`δ`: `d`,  // \u03b4 GREEK SMALL LETTER DELTA
+	`ε`: `e`,  // \u03b5 GREEK SMALL LETTER EPSILON
+	`ζ`: `z`,  // \u03b6 GREEK SMALL LETTER ZETA
+	`η`: `h`,  // \u03b7 GREEK SMALL LETTER ETA
+	`θ`: `q`,  // \u03b8 GREEK SMALL LETTER THETA
+	`ι`: `i`,  // \u03b9 GREEK SMALL LETTER IOTA
+	`κ`: `k`,  // \u03ba GREEK SMALL LETTER KAPPA
+	`λ`: `l`,  // \u03bb GREEK SMALL LETTER LAMDA
+	`μ`: `m`,  // \u03bc GREEK SMALL LETTER MU
+	`ν`: `n`,  // \u03bd GREEK SMALL LETTER NU
+	`ξ`: `c`,  // \u03be GREEK SMALL LETTER XI
+	`ο`: `o`,  // \u03bf GREEK SMALL LETTER OMICRON
+	`π`: `p`,  // \u03c0 GREEK SMALL LETTER PI
+	`ρ`: `r`,  // \u03c1 GREEK SMALL LETTER RHO
+	`σ`: `s`,  // \u03c3 GREEK SMALL LETTER SIGMA
+	`ς`: `s`,  // \u03c2 GREEK SMALL LETTER FINAL SIGMA
+	`ϲ`: `s3`, // \u03f2 GREEK LUNATE SIGMA SYMBOL
+	`τ`: `t`,  // \u03c4 GREEK SMALL LETTER TAU
+	`υ`: `u`,  // \u03c5 GREEK SMALL LETTER UPSILON
+	`φ`: `f`,  // \u03c6 GREEK SMALL LETTER PHI
+	`χ`: `x`,  // \u03c7 GREEK SMALL LETTER CHI
+	`ψ`: `y`,  // \u03c8 GREEK SMALL LETTER PSI
+	`ω`: `w`,  // \u03c9 GREEK SMALL LETTER OMEGA
 
 	// Capital Letters
-	`Α`: `*a`,  // \u0391
-	`Β`: `*b`,  // \u0392
-	`Γ`: `*g`,  // \u0393
-	`Δ`: `*d`,  // \u0394
-	`Ε`: `*e`,  // \u0395
-	`Ζ`: `*z`,  // \u0396
-	`Η`: `*h`,  // \u0397
-	`Θ`: `*q`,  // \u0398
-	`Ι`: `*i`,  // \u0399
-	`Κ`: `*k`,  // \u039a
-	`Λ`: `*l`,  // \u039b
-	`Μ`: `*m`,  // \u039c
-	`Ν`: `*n`,  // \u039d
-	`Ξ`: `*c`,  // \u039e
-	`Ο`: `*o`,  // \u039f
-	`Π`: `*p`,  // \u03a0
-	`Ρ`: `*r`,  // \u03a1
-	`Σ`: `*s`,  // \u03a3
-	`Ϲ`: `*s3`, // \u03f9
-	`Τ`: `*t`,  // \u03a4
-	`Υ`: `*u`,  // \u03a5
-	`Φ`: `*f`,  // \u03a6
-	`Χ`: `*x`,  // \u03a7
-	`Ψ`: `*y`,  // \u03a8
-	`Ω`: `*w`,  // \u03a9
+	`Α`: `*a`,  // \u0391 GREEK CAPITAL LETTER ALPHA
+	`Β`: `*b`,  // \u0392 GREEK CAPITAL LETTER BETA
+	`Γ`: `*g`,  // \u0393 GREEK CAPITAL LETTER GAMMA
+	`Δ`: `*d`,  // \u0394 GREEK CAPITAL LETTER DELTA
+	`Ε`: `*e`,  // \u0395 GREEK CAPITAL LETTER EPSILON
+	`Ζ`: `*z`,  // \u0396 GREEK CAPITAL LETTER ZETA
+	`Η`: `*h`,  // \u0397 GREEK CAPITAL LETTER ETA
+	`Θ`: `*q`,  // \u0398 GREEK CAPITAL LETTER THETA
+	`Ι`: `*i`,  // \u0399 GREEK CAPITAL LETTER IOTA
+	`Κ`: `*k`,  // \u039a GREEK CAPITAL LETTER KAPPA
+	`Λ`: `*l`,  // \u039b GREEK CAPITAL LETTER LAMDA
+	`Μ`: `*m`,  // \u039c GREEK CAPITAL LETTER MU
+	`Ν`: `*n`,  // \u039d GREEK CAPITAL LETTER NU
+	`Ξ`: `*c`,  // \u039e GREEK CAPITAL LETTER XI
+	`Ο`: `*o`,  // \u039f GREEK CAPITAL LETTER OMICRON
+	`Π`: `*p`,  // \u03a0 GREEK CAPITAL LETTER PI
+	`Ρ`: `*r`,  // \u03a1 GREEK CAPITAL LETTER RHO
+	`Σ`: `*s`,  // \u03a3 GREEK CAPITAL LETTER SIGMA
+	`Ϲ`: `*s3`, // \u03f9 GREEK CAPITAL LUNATE SIGMA SYMBOL
+	`Τ`: `*t`,  // \u03a4 GREEK CAPITAL LETTER TAU
+	`Υ`: `*u`,  // \u03a5 GREEK CAPITAL LETTER UPSILON
+	`Φ`: `*f`,  // \u03a6 GREEK CAPITAL LETTER PHI
+	`Χ`: `*x`,  // \u03a7 GREEK CAPITAL LETTER CHI
+	`Ψ`: `*y`,  // \u03a8 GREEK CAPITAL LETTER PSI
+	`Ω`: `*w`,  // \u03a9 GREEK CAPITAL LETTER OMEGA
 
 	// Smooth breathing
-	`ἀ`: `a)`,  // \u1f00
-	`ἐ`: `e)`,  // \u1f10
-	`ἠ`: `h)`,  // \u1f20
-	`ἰ`: `i)`,  // \u1f30
-	`ὀ`: `o)`,  // \u1f40
-	`ὐ`: `u)`,  // \u1f50
-	`ὠ`: `w)`,  // \u1f60
-	`ῤ`: `r)`,  // \u1fe4
-	`Ἀ`: `*)a`, // \u1f08
-	`Ἐ`: `*)e`, // \u1f18
-	`Ἠ`: `*)h`, // \u1f28
-	`Ἰ`: `*)i`, // \u1f38
-	`Ὀ`: `*)o`, // \u1f48
-	`Ὠ`: `*)w`, // \u1f68
+	`ἀ`: `a)`,  // \u1f00 GREEK SMALL LETTER ALPHA WITH PSILI
+	`ἐ`: `e)`,  // \u1f10 GREEK SMALL LETTER EPSILON WITH PSILI
+	`ἠ`: `h)`,  // \u1f20 GREEK SMALL LETTER ETA WITH PSILI
+	`ἰ`: `i)`,  // \u1f30 GREEK SMALL LETTER IOTA WITH PSILI
+	`ὀ`: `o)`,  // \u1f40 GREEK SMALL LETTER OMICRON WITH PSILI
+	`ὐ`: `u)`,  // \u1f50 GREEK SMALL LETTER UPSILON WITH PSILI
+	`ὠ`: `w)`,  // \u1f60 GREEK SMALL LETTER OMEGA WITH PSILI
+	`ῤ`: `r)`,  // \u1fe4 GREEK SMALL LETTER RHO WITH PSILI
+	`Ἀ`: `*)a`, // \u1f08 GREEK CAPITAL LETTER ALPHA WITH PSILI
+	`Ἐ`: `*)e`, // \u1f18 GREEK CAPITAL LETTER EPSILON WITH PSILI
+	`Ἠ`: `*)h`, // \u1f28 GREEK CAPITAL LETTER ETA WITH PSILI
+	`Ἰ`: `*)i`, // \u1f38 GREEK CAPITAL LETTER IOTA WITH PSILI
+	`Ὀ`: `*)o`, // \u1f48 GREEK CAPITAL LETTER OMICRON WITH PSILI
+	`Ὠ`: `*)w`, // \u1f68 GREEK CAPITAL LETTER OMEGA WITH PSILI
 
 	// Rough breathing
-	`ἁ`: `a(`,  // \u1f01
-	`ἑ`: `e(`,  // \u1f11
-	`ἡ`: `h(`,  // \u1f21
-	`ἱ`: `i(`,  // \u1f31
-	`ὁ`: `o(`,  // \u1f41
-	`ὑ`: `u(`,  // \u1f51
-	`ὡ`: `w(`,  // \u1f61
-	`ῥ`: `r(`,  // \u1fe5
-	`Ἁ`: `*(a`, // \u1f09
-	`Ἑ`: `*(e`, // \u1f19
-	`Ἡ`: `*(h`, // \u1f29
-	`Ἱ`: `*(i`, // \u1f39
-	`Ὁ`: `*(o`, // \u1f49
-	`Ὑ`: `*(u`, // \u1f59
-	`Ὡ`: `*(w`, // \u1f69
-	`Ῥ`: `*(r`, // \u1fec
+	`ἁ`: `a(`,  // \u1f01 GREEK SMALL LETTER ALPHA WITH DASIA
+	`ἑ`: `e(`,  // \u1f11 GREEK SMALL LETTER EPSILON WITH DASIA
+	`ἡ`: `h(`,  // \u1f21 GREEK SMALL LETTER ETA WITH DASIA
+	`ἱ`: `i(`,  // \u1f31 GREEK SMALL LETTER IOTA WITH DASIA
+	`ὁ`: `o(`,  // \u1f41 GREEK SMALL LETTER OMICRON WITH DASIA
+	`ὑ`: `u(`,  // \u1f51 GREEK SMALL LETTER UPSILON WITH DASIA
+	`ὡ`: `w(`,  // \u1f61 GREEK SMALL LETTER OMEGA WITH DASIA
+	`ῥ`: `r(`,  // \u1fe5 GREEK SMALL LETTER RHO WITH DASIA
+	`Ἁ`: `*(a`, // \u1f09 GREEK CAPITAL LETTER ALPHA WITH DASIA
+	`Ἑ`: `*(e`, // \u1f19 GREEK CAPITAL LETTER EPSILON WITH DASIA
+	`Ἡ`: `*(h`, // \u1f29 GREEK CAPITAL LETTER ETA WITH DASIA
+	`Ἱ`: `*(i`, // \u1f39 GREEK CAPITAL LETTER IOTA WITH DASIA
+	`Ὁ`: `*(o`, // \u1f49 GREEK CAPITAL LETTER OMICRON WITH DASIA
+	`Ὑ`: `*(u`, // \u1f59 GREEK CAPITAL LETTER UPSILON WITH DASIA
+	`Ὡ`: `*(w`, // \u1f69 GREEK CAPITAL LETTER OMEGA WITH DASIA
+	`Ῥ`: `*(r`, // \u1fec GREEK CAPITAL LETTER RHO WITH DASIA
 
 	// Acute accent and grave accent
-	`ὰ`: `a\\`,  // \u1f70
-	`ά`: `a/`,   // \u1f71
-	`ὲ`: `e\\`,  // \u1f72
-	`έ`: `e/`,   // \u1f73
-	`ὴ`: `h\\`,  // \u1f74
-	`ή`: `h/`,   // \u1f75
-	`ὶ`: `i\\`,  // \u1f76
-	`ί`: `i/`,   // \u1f77
-	`ὸ`: `o\\`,  // \u1f78
-	`ό`: `o/`,   // \u1f79
-	`ὺ`: `u\\`,  // \u1f7a
-	`ύ`: `u/`,   // \u1f7b
-	`ὼ`: `w\\`,  // \u1f7c
-	`ώ`: `w/`,   // \u1f7d
-	`Ὰ`: `*\\a`, // \u1fba
-	`Ά`: `*/a`,  // \u1fbb
-	`Ὲ`: `*\\e`, // \u1fce
-	`Έ`: `*/e`,  // \u1fc9
-	`Ὴ`: `*\\h`, // \u1fca
-	`Ή`: `*/h`,  // \u1fcb
-	`Ὶ`: `*\\i`, // \u1fda
-	`Ί`: `*/i`,  // \u1fdb
-	`Ὸ`: `*\\o`, // \u1ff8
-	`Ό`: `*/o`,  // \u1ff9
-	`Ὺ`: `*\\u`, // \u1fea
-	`Ύ`: `*/u`,  // \u1feb
-	`Ὼ`: `*\\w`, // \u1ffa
-	`Ώ`: `*/w`,  // \u1ffb
+	`ὰ`: `a\`,  // \u1f70 GREEK SMALL LETTER ALPHA WITH VARIA
+	`ά`: `a/`,  // \u1f71 GREEK SMALL LETTER ALPHA WITH OXIA
+	`ά`: `a/`,  // \u03ac GREEK SMALL LETTER ALPHA WITH TONOS
+	`ὲ`: `e\`,  // \u1f72 GREEK SMALL LETTER EPSILON WITH VARIA
+	`έ`: `e/`,  // \u1f73 GREEK SMALL LETTER EPSILON WITH OXIA
+	`έ`: `e/`,  // \u03ad GREEK SMALL LETTER EPSILON WITH TONOS
+	`ὴ`: `h\`,  // \u1f74 GREEK SMALL LETTER ETA WITH VARIA
+	`ή`: `h/`,  // \u1f75 GREEK SMALL LETTER ETA WITH OXIA
+	`ή`: `h/`,  // \u03ae GREEK SMALL LETTER ETA WITH TONOS
+	`ὶ`: `i\`,  // \u1f76 GREEK SMALL LETTER IOTA WITH VARIA
+	`ί`: `i/`,  // \u1f77 GREEK SMALL LETTER IOTA WITH OXIA
+	`ί`: `i/`,  // \u03af GREEK SMALL LETTER IOTA WITH TONOS
+	`ὸ`: `o\`,  // \u1f78 GREEK SMALL LETTER OMICRON WITH VARIA
+	`ό`: `o/`,  // \u1f79 GREEK SMALL LETTER OMICRON WITH OXIA
+	`ό`: `o/`,  // \u03cc GREEK SMALL LETTER OMICRON WITH TONOS
+	`ὺ`: `u\`,  // \u1f7a GREEK SMALL LETTER UPSILON WITH VARIA
+	`ύ`: `u/`,  // \u1f7b GREEK SMALL LETTER UPSILON WITH OXIA
+	`ύ`: `u/`,  // \u03cd GREEK SMALL LETTER UPSILON WITH TONOS
+	`ὼ`: `w\`,  // \u1f7c GREEK SMALL LETTER OMEGA WITH VARIA
+	`ώ`: `w/`,  // \u1f7d GREEK SMALL LETTER OMEGA WITH OXIA
+	`ώ`: `w/`,  // \u03ce GREEK SMALL LETTER OMEGA WITH TONOS
+	`Ὰ`: `*\a`, // \u1fba GREEK CAPITAL LETTER ALPHA WITH VARIA
+	`Ά`: `*/a`, // \u1fbb GREEK CAPITAL LETTER ALPHA WITH OXIA
+	`Ά`: `*/a`, // \u0386 GREEK CAPITAL LETTER ALPHA WITH TONOS
+	`Ὲ`: `*\e`, // \u1fc8 GREEK CAPITAL LETTER EPSILON WITH VARIA
+	`Έ`: `*/e`, // \u1fc9 GREEK CAPITAL LETTER EPSILON WITH OXIA
+	`Έ`: `*/e`, // \u0388 GREEK CAPITAL LETTER EPSILON WITH TONOS
+	`Ὴ`: `*\h`, // \u1fca GREEK CAPITAL LETTER ETA WITH VARIA
+	`Ή`: `*/h`, // \u1fcb GREEK CAPITAL LETTER ETA WITH OXIA
+	`Ή`: `*/h`, // \u0389 GREEK CAPITAL LETTER ETA WITH TONOS
+	`Ὶ`: `*\i`, // \u1fda GREEK CAPITAL LETTER IOTA WITH VARIA
+	`Ί`: `*/i`, // \u1fdb GREEK CAPITAL LETTER IOTA WITH OXIA
+	`Ί`: `*/i`, // \u038a GREEK CAPITAL LETTER IOTA WITH TONOS
+	`Ὸ`: `*\o`, // \u1ff8 GREEK CAPITAL LETTER OMICRON WITH VARIA
+	`Ό`: `*/o`, // \u1ff9 GREEK CAPITAL LETTER OMICRON WITH OXIA
+	`Ό`: `*/o`, // \u038c GREEK CAPITAL LETTER OMICRON WITH TONOS
+	`Ὺ`: `*\u`, // \u1fea GREEK CAPITAL LETTER UPSILON WITH VARIA
+	`Ύ`: `*/u`, // \u1feb GREEK CAPITAL LETTER UPSILON WITH OXIA
+	`Ύ`: `*/u`, // \u038e GREEK CAPITAL LETTER UPSILON WITH TONOS
+	`Ὼ`: `*\w`, // \u1ffa GREEK CAPITAL LETTER OMEGA WITH VARIA
+	`Ώ`: `*/w`, // \u1ffb GREEK CAPITAL LETTER OMEGA WITH OXIA
+	`Ώ`: `*/w`, // \038f GREEK CAPITAL LETTER OMEGA WITH TONOS
 
 	// Smooth breathing and acute accent
 
-	`ἄ`:  `a)/`,  // \u1f04
-	`ἔ`:  `e)/`,  // \u1f14
-	`ἤ`:  `h)/`,  // \u1f24
-	`ἴ`:  `i)/`,  // \u1f34
-	`ὄ`:  `o)/`,  // \u1f44
-	`ὔ`:  `u)/`,  // \u1f54
-	`ὤ`:  `w)/`,  // \u1f64
-	`Ἄ`:  `*)/a`, // \u1f0c
-	`Ἔ`:  `*)/e`, // \u1f1c
-	`Ἤ`:  `*)/h`, // \u1f2c
-	`Ἴ`:  `*)/i`, // \u1f3c
-	`Ὄ`:  `*)/o`, // \u1f4c
-	`῎Υ`: `*)/u`, // \u1f5c
-	`Ὤ`:  `*)/w`, // \u1f6c
+	`ἄ`:  `a)/`,  // \u1f04 GREEK SMALL LETTER ALPHA WITH PSILI AND OXIA
+	`ἔ`:  `e)/`,  // \u1f14 GREEK SMALL LETTER EPSILON WITH PSILI AND OXIA
+	`ἤ`:  `h)/`,  // \u1f24 GREEK SMALL LETTER ETA WITH PSILI AND OXIA
+	`ἴ`:  `i)/`,  // \u1f34 GREEK SMALL LETTER IOTA WITH PSILI AND OXIA
+	`ὄ`:  `o)/`,  // \u1f44 GREEK SMALL LETTER OMICRON WITH PSILI AND OXIA
+	`ὔ`:  `u)/`,  // \u1f54 GREEK SMALL LETTER UPSILON WITH PSILI AND OXIA
+	`ὤ`:  `w)/`,  // \u1f64 GREEK SMALL LETTER OMEGA WITH PSILI AND OXIA
+	`Ἄ`:  `*)/a`, // \u1f0c GREEK CAPITAL LETTER ALPHA WITH PSILI AND OXIA
+	`Ἔ`:  `*)/e`, // \u1f1c GREEK CAPITAL LETTER EPSILON WITH PSILI AND OXIA
+	`Ἤ`:  `*)/h`, // \u1f2c GREEK CAPITAL LETTER ETA WITH PSILI AND OXIA
+	`Ἴ`:  `*)/i`, // \u1f3c GREEK CAPITAL LETTER IOTA WITH PSILI AND OXIA
+	`Ὄ`:  `*)/o`, // \u1f4c GREEK CAPITAL LETTER OMICRON WITH PSILI AND OXIA
+	`῎Υ`: `*)/u`, // \u1fce\u03a5 GREEK CAPITAL LETTER UPSILON WITH PSILI AND OXIA
+	`Ὤ`:  `*)/w`, // \u1f6c GREEK CAPITAL LETTER OMEGA WITH PSILI AND OXIA
 
 	// Smooth breathing and grave accent
-	`ἂ`:  `a)\\`,  // \u1f02
-	`ἒ`:  `e)\\`,  // \u1f12
-	`ἢ`:  `h)\\`,  // \u1f22
-	`ἲ`:  `i)\\`,  // \u1f32
-	`ὂ`:  `o)\\`,  // \u1f42
-	`ὒ`:  `u)\\`,  // \u1f52
-	`ὢ`:  `w)\\`,  // \u1f62
-	`Ἂ`:  `*)\\a`, // \u1f0a
-	`Ἒ`:  `*)\\e`, // \u1f1a
-	`Ἢ`:  `*)\\h`, // \u1f2a
-	`Ἲ`:  `*)\\i`, // \u1f3a
-	`Ὂ`:  `*)\\o`, // \u1f4a
-	`῍Υ`: `*)\\u`, // \u1f5a
-	`Ὢ`:  `*)\\w`, // \u1f6a
+	`ἂ`:  `a)\\`,  // \u1f02 GREEK SMALL LETTER ALPHA WITH PSILI AND VARIA
+	`ἒ`:  `e)\\`,  // \u1f12 GREEK SMALL LETTER EPSILON WITH PSILI AND VARIA
+	`ἢ`:  `h)\\`,  // \u1f22 GREEK SMALL LETTER ETA WITH PSILI AND VARIA
+	`ἲ`:  `i)\\`,  // \u1f32 GREEK SMALL LETTER IOTA WITH PSILI AND VARIA
+	`ὂ`:  `o)\\`,  // \u1f42 GREEK SMALL LETTER OMICRON WITH PSILI AND VARIA
+	`ὒ`:  `u)\\`,  // \u1f52 GREEK SMALL LETTER UPSILON WITH PSILI AND VARIA
+	`ὢ`:  `w)\\`,  // \u1f62 GREEK SMALL LETTER OMEGA WITH PSILI AND VARIA
+	`Ἂ`:  `*)\\a`, // \u1f0a GREEK CAPITAL LETTER ALPHA WITH PSILI AND VARIA
+	`Ἒ`:  `*)\\e`, // \u1f1a GREEK CAPITAL LETTER EPSILON WITH PSILI AND VARIA
+	`Ἢ`:  `*)\\h`, // \u1f2a GREEK CAPITAL LETTER ETA WITH PSILI AND VARIA
+	`Ἲ`:  `*)\\i`, // \u1f3a GREEK CAPITAL LETTER IOTA WITH PSILI AND VARIA
+	`Ὂ`:  `*)\\o`, // \u1f4a GREEK CAPITAL LETTER OMICRON WITH PSILI AND VARIA
+	`῍Υ`: `*)\\u`, // \u1fcd\u03a5 GREEK CAPITAL LETTER UPSILON WITH PSILI AND VARIA
+	`Ὢ`:  `*)\\w`, // \u1f6a GREEK CAPITAL LETTER OMEGA WITH PSILI AND VARIA
 
 	// Rough breathing and acute accent
-	`ἅ`: `a(/`,  // \u1f05
-	`ἕ`: `e(/`,  // \u1f15
-	`ἥ`: `h(/`,  // \u1f25
-	`ἵ`: `i(/`,  // \u1f35
-	`ὅ`: `o(/`,  // \u1f45
-	`ὕ`: `u(/`,  // \u1f55
-	`ὥ`: `w(/`,  // \u1f65
-	`Ἅ`: `*(/a`, // \u1f0d
-	`Ἕ`: `*(/e`, // \u1f1d
-	`Ἥ`: `*(/h`, // \u1f2d
-	`Ἵ`: `*(/i`, // \u1f3d
-	`Ὅ`: `*(/o`, // \u1f4d
-	`Ὕ`: `*(/u`, // \u1f5d
-	`Ὥ`: `*(/w`, // \u1f6d
+	`ἅ`: `a(/`,  // \u1f05 GREEK SMALL LETTER ALPHA WITH DASIA AND OXIA
+	`ἕ`: `e(/`,  // \u1f15 GREEK SMALL LETTER EPSILON WITH DASIA AND OXIA
+	`ἥ`: `h(/`,  // \u1f25 GREEK SMALL LETTER ETA WITH DASIA AND OXIA
+	`ἵ`: `i(/`,  // \u1f35 GREEK SMALL LETTER IOTA WITH DASIA AND OXIA
+	`ὅ`: `o(/`,  // \u1f45 GREEK SMALL LETTER OMICRON WITH DASIA AND OXIA
+	`ὕ`: `u(/`,  // \u1f55 GREEK SMALL LETTER UPSILON WITH DASIA AND OXIA
+	`ὥ`: `w(/`,  // \u1f65 GREEK SMALL LETTER OMEGA WITH DASIA AND OXIA
+	`Ἅ`: `*(/a`, // \u1f0d GREEK CAPITAL LETTER ALPHA WITH DASIA AND OXIA
+	`Ἕ`: `*(/e`, // \u1f1d GREEK CAPITAL LETTER EPSILON WITH DASIA AND OXIA
+	`Ἥ`: `*(/h`, // \u1f2d GREEK CAPITAL LETTER ETA WITH DASIA AND OXIA
+	`Ἵ`: `*(/i`, // \u1f3d GREEK CAPITAL LETTER IOTA WITH DASIA AND OXIA
+	`Ὅ`: `*(/o`, // \u1f4d GREEK CAPITAL LETTER OMICRON WITH DASIA AND OXIA
+	`Ὕ`: `*(/u`, // \u1f5d GREEK CAPITAL LETTER UPSILON WITH DASIA AND OXIA
+	`Ὥ`: `*(/w`, // \u1f6d GREEK CAPITAL LETTER OMEGA WITH DASIA AND OXIA
 
 	// Rough breathing and grave accent
-	`ἃ`: `a(\\`,  // \u1f03
-	`ἓ`: `e(\\`,  // \u1f13
-	`ἣ`: `h(\\`,  // \u1f23
-	`ἳ`: `i(\\`,  // \u1f33
-	`ὃ`: `o(\\`,  // \u1f43
-	`ὓ`: `u(\\`,  // \u1f53
-	`ὣ`: `w(\\`,  // \u1f63
-	`Ἃ`: `*(\\a`, // \u1f0b
-	`Ἓ`: `*(\\e`, // \u1f1b
-	`Ἣ`: `*(\\h`, // \u1f2b
-	`Ἳ`: `*(\\i`, // \u1f3b
-	`Ὃ`: `*(\\o`, // \u1f4b
-	`Ὓ`: `*(\\u`, // \u1f5b
-	`Ὣ`: `*(\\w`, // \u1f6b
+	`ἃ`: `a(\\`,  // \u1f03 GREEK SMALL LETTER ALPHA WITH DASIA AND VARIA
+	`ἓ`: `e(\\`,  // \u1f13 GREEK SMALL LETTER EPSILON WITH DASIA AND VARIA
+	`ἣ`: `h(\\`,  // \u1f23 GREEK SMALL LETTER ETA WITH DASIA AND VARIA
+	`ἳ`: `i(\\`,  // \u1f33 GREEK SMALL LETTER IOTA WITH DASIA AND VARIA
+	`ὃ`: `o(\\`,  // \u1f43 GREEK SMALL LETTER OMICRON WITH DASIA AND VARIA
+	`ὓ`: `u(\\`,  // \u1f53 GREEK SMALL LETTER UPSILON WITH DASIA AND VARIA
+	`ὣ`: `w(\\`,  // \u1f63 GREEK SMALL LETTER OMEGA WITH DASIA AND VARIA
+	`Ἃ`: `*(\\a`, // \u1f0b GREEK CAPITAL LETTER ALPHA WITH DASIA AND VARIA
+	`Ἓ`: `*(\\e`, // \u1f1b GREEK CAPITAL LETTER EPSILON WITH DASIA AND VARIA
+	`Ἣ`: `*(\\h`, // \u1f2b GREEK CAPITAL LETTER ETA WITH DASIA AND VARIA
+	`Ἳ`: `*(\\i`, // \u1f3b GREEK CAPITAL LETTER IOTA WITH DASIA AND VARIA
+	`Ὃ`: `*(\\o`, // \u1f4b GREEK CAPITAL LETTER OMICRON WITH DASIA AND VARIA
+	`Ὓ`: `*(\\u`, // \u1f5b GREEK CAPITAL LETTER UPSILON WITH DASIA AND VARIA
+	`Ὣ`: `*(\\w`, // \u1f6b GREEK CAPITAL LETTER OMEGA WITH DASIA AND VARIA
 
 	// Perispomeni
-	`ᾶ`: `a=`, // \u1fb6
-	`ῆ`: `h=`, // \u1fc6
-	`ῖ`: `i=`, // \u1fd6
-	`ῦ`: `u=`, // \u1fe6
-	`ῶ`: `w=`, // \u1ff6
+	`ᾶ`: `a=`, // \u1fb6 GREEK SMALL LETTER ALPHA WITH PERISPOMENI
+	`ῆ`: `h=`, // \u1fc6 GREEK SMALL LETTER ETA WITH PERISPOMENI
+	`ῖ`: `i=`, // \u1fd6 GREEK SMALL LETTER IOTA WITH PERISPOMENI
+	`ῦ`: `u=`, // \u1fe6 GREEK SMALL LETTER UPSILON WITH PERISPOMENI
+	`ῶ`: `w=`, // \u1ff6 GREEK SMALL LETTER OMEGA WITH PERISPOMENI
 
 	// Smooth breathing and perispomeni
-	`ἆ`: `a)=`,  // \u1f06
-	`ἦ`: `h)=`,  // \u1f26
-	`ἶ`: `i)=`,  // \u1f36
-	`ὖ`: `u)=`,  // \u1f56
-	`ὦ`: `w)=`,  // \u1f66
-	`Ἆ`: `*)=a`, // \u1f0e
-	`Ἦ`: `*)=h`, // \u1f2e
-	`Ἶ`: `*)=i`, // \u1f3e
-	`Ὦ`: `*)=w`, // \u1f6e
+	`ἆ`: `a)=`,  // \u1f06 GREEK SMALL LETTER ALPHA WITH PSILI AND PERISPOMENI
+	`ἦ`: `h)=`,  // \u1f26 GREEK SMALL LETTER ETA WITH PSILI AND PERISPOMENI
+	`ἶ`: `i)=`,  // \u1f36 GREEK SMALL LETTER IOTA WITH PSILI AND PERISPOMENI
+	`ὖ`: `u)=`,  // \u1f56 GREEK SMALL LETTER UPSILON WITH PSILI AND PERISPOMENI
+	`ὦ`: `w)=`,  // \u1f66 GREEK SMALL LETTER OMEGA WITH PSILI AND PERISPOMENI
+	`Ἆ`: `*)=a`, // \u1f0e GREEK CAPITAL LETTER ALPHA WITH PSILI AND PERISPOMENI
+	`Ἦ`: `*)=h`, // \u1f2e GREEK CAPITAL LETTER ETA WITH PSILI AND PERISPOMENI
+	`Ἶ`: `*)=i`, // \u1f3e GREEK CAPITAL LETTER IOTA WITH PSILI AND PERISPOMENI
+	`Ὦ`: `*)=w`, // \u1f6e GREEK CAPITAL LETTER OMEGA WITH PSILI AND PERISPOMENI
 
 	// Rough breathing and perispomeni
-	`ἇ`: `a(=`,  // \u1f07
-	`ἧ`: `h(=`,  // \u1f27
-	`ἷ`: `i(=`,  // \u1f37
-	`ὗ`: `u(=`,  // \u1f57
-	`ὧ`: `w(=`,  // \u1f67
-	`Ἇ`: `*(=a`, // \u1f0f
-	`Ἧ`: `*(=h`, // \u1f2f
-	`Ἷ`: `*(=i`, // \u1f3f
-	`Ὗ`: `*(=u`, // \u1f5f
-	`Ὧ`: `*(=w`, // \u1f6f
+	`ἇ`: `a(=`,  // \u1f07 GREEK SMALL LETTER ALPHA WITH DASIA AND PERISPOMENI
+	`ἧ`: `h(=`,  // \u1f27 GREEK SMALL LETTER ETA WITH DASIA AND PERISPOMENI
+	`ἷ`: `i(=`,  // \u1f37 GREEK SMALL LETTER IOTA WITH DASIA AND PERISPOMENI
+	`ὗ`: `u(=`,  // \u1f57 GREEK SMALL LETTER UPSILON WITH DASIA AND PERISPOMENI
+	`ὧ`: `w(=`,  // \u1f67 GREEK SMALL LETTER OMEGA WITH DASIA AND PERISPOMENI
+	`Ἇ`: `*(=a`, // \u1f0f GREEK CAPITAL LETTER ALPHA WITH DASIA AND PERISPOMENI
+	`Ἧ`: `*(=h`, // \u1f2f GREEK CAPITAL LETTER ETA WITH DASIA AND PERISPOMENI
+	`Ἷ`: `*(=i`, // \u1f3f GREEK CAPITAL LETTER IOTA WITH DASIA AND PERISPOMENI
+	`Ὗ`: `*(=u`, // \u1f5f GREEK CAPITAL LETTER UPSILON WITH DASIA AND PERISPOMENI
+	`Ὧ`: `*(=w`, // \u1f6f GREEK CAPITAL LETTER OMEGA WITH DASIA AND PERISPOMENI
 
 	// Perispomeni and ypogegrammeni
-	`ᾷ`: `a=|`, // \u1fb7
-	`ῇ`: `h=|`, // \u1fc7
-	`ῷ`: `w=|`, // \u1ff7
+	`ᾷ`: `a=|`, // \u1fb7 GREEK SMALL LETTER ALPHA WITH PERISPOMENI AND YPOGEGRAMMENI
+	`ῇ`: `h=|`, // \u1fc7 GREEK SMALL LETTER ETA WITH PERISPOMENI AND YPOGEGRAMMENI
+	`ῷ`: `w=|`, // \u1ff7 GREEK SMALL LETTER OMEGA WITH PERISPOMENI AND YPOGEGRAMMENI
 
 	// Ypogegrammeni
-	`ᾳ`: `a|`,  // \u1fb3
-	`ῃ`: `h|`,  // \u1fc3
-	`ῳ`: `w|`,  // \u1ff3
-	`ᾼ`: `*a|`, // \u1fbc
-	`ῌ`: `*h|`, // \u1fcc
-	`ῼ`: `*w|`, // \u1ffc
+	`ᾳ`: `a|`,  // \u1fb3 GREEK SMALL LETTER ALPHA WITH YPOGEGRAMMENI
+	`ῃ`: `h|`,  // \u1fc3 GREEK SMALL LETTER ETA WITH YPOGEGRAMMENI
+	`ῳ`: `w|`,  // \u1ff3 GREEK SMALL LETTER OMEGA WITH YPOGEGRAMMENI
+	`ᾼ`: `*a|`, // \u1fbc GREEK CAPITAL LETTER ALPHA WITH PROSGEGRAMMENI
+	`ῌ`: `*h|`, // \u1fcc GREEK CAPITAL LETTER ETA WITH PROSGEGRAMMENI
+	`ῼ`: `*w|`, // \u1ffc GREEK CAPITAL LETTER OMEGA WITH PROSGEGRAMMENI
 
 	// Acute accent and ypogegrammeni
-	`ᾴ`: `a/|`, // \u1fb4
-	`ῄ`: `h/|`, // \u1fc4
-	`ῴ`: `w/|`, // \u1ff4
+	`ᾴ`: `a/|`, // \u1fb4 GREEK SMALL LETTER ALPHA WITH OXIA AND YPOGEGRAMMENI
+	`ῄ`: `h/|`, // \u1fc4 GREEK SMALL LETTER ETA WITH OXIA AND YPOGEGRAMMENI
+	`ῴ`: `w/|`, // \u1ff4 GREEK SMALL LETTER OMEGA WITH OXIA AND YPOGEGRAMMENI
 
 	// Smooth breathing and ypogegrammeni
-	`ᾀ`: `a)|`,  // \u1f80
-	`ᾐ`: `h)|`,  // \u1f90
-	`ᾠ`: `w)|`,  // \u1fa0
-	`ᾈ`: `*)a|`, // \u1f88
-	`ᾘ`: `*)h|`, // \u1f98
-	`ᾨ`: `*)w|`, // \u1fa8
+	`ᾀ`: `a)|`,  // \u1f80 GREEK SMALL LETTER ALPHA WITH PSILI AND YPOGEGRAMMENI
+	`ᾐ`: `h)|`,  // \u1f90 GREEK SMALL LETTER ETA WITH PSILI AND YPOGEGRAMMENI
+	`ᾠ`: `w)|`,  // \u1fa0 GREEK SMALL LETTER OMEGA WITH PSILI AND YPOGEGRAMMENI
+	`ᾈ`: `*)a|`, // \u1f88 GREEK CAPITAL LETTER ALPHA WITH PSILI AND PROSGEGRAMMENI
+	`ᾘ`: `*)h|`, // \u1f98 GREEK CAPITAL LETTER ETA WITH PSILI AND PROSGEGRAMMENI
+	`ᾨ`: `*)w|`, // \u1fa8 GREEK CAPITAL LETTER OMEGA WITH PSILI AND PROSGEGRAMMENI
 
 	// Rough breathing and ypogegrammeni
-	`ᾁ`: `a(|`,  // \u1f81
-	`ᾑ`: `h(|`,  // \u1f91
-	`ᾡ`: `w(|`,  // \u1fa1
-	`ᾉ`: `*(a|`, // \u1f89
-	`ᾙ`: `*(h|`, // \u1f99
-	`ᾩ`: `*(w|`, // \u1fa9
+	`ᾁ`: `a(|`,  // \u1f81 GREEK SMALL LETTER ALPHA WITH DASIA AND YPOGEGRAMMENI
+	`ᾑ`: `h(|`,  // \u1f91 GREEK SMALL LETTER ETA WITH DASIA AND YPOGEGRAMMENI
+	`ᾡ`: `w(|`,  // \u1fa1 GREEK SMALL LETTER OMEGA WITH DASIA AND YPOGEGRAMMENI
+	`ᾉ`: `*(a|`, // \u1f89 GREEK CAPITAL LETTER ALPHA WITH DASIA AND PROSGEGRAMMENI
+	`ᾙ`: `*(h|`, // \u1f99 GREEK CAPITAL LETTER ETA WITH DASIA AND PROSGEGRAMMENI
+	`ᾩ`: `*(w|`, // \u1fa9 GREEK CAPITAL LETTER OMEGA WITH DASIA AND PROSGEGRAMMENI
 
 	// Smooth breathing, acute accent, and ypogegrammeni
-	`ᾂ`: `a)\|`,   // \u1f82
-	`ᾒ`: `h)\|`,   // \u1f92
-	`ᾢ`: `w)\|`,   // \u1fa2
-	`ᾊ`: `*)\\a|`, // \u1f8a
-	`ᾚ`: `*)\h|`,  // \u1f9a
-	`ᾪ`: `*)\w|`,  // \u1faa
+	`ᾂ`: `a)\|`,   // \u1f82 GREEK SMALL LETTER ALPHA WITH PSILI AND VARIA AND YPOGEGRAMMENI
+	`ᾒ`: `h)\|`,   // \u1f92 GREEK SMALL LETTER ETA WITH PSILI AND VARIA AND YPOGEGRAMMENI
+	`ᾢ`: `w)\|`,   // \u1fa2 GREEK SMALL LETTER OMEGA WITH PSILI AND VARIA AND YPOGEGRAMMENI
+	`ᾊ`: `*)\\a|`, // \u1f8a GREEK CAPITAL LETTER ALPHA WITH PSILI AND VARIA AND PROSGEGRAMMENI
+	`ᾚ`: `*)\h|`,  // \u1f9a GREEK CAPITAL LETTER ETA WITH PSILI AND VARIA AND PROSGEGRAMMENI
+	`ᾪ`: `*)\w|`,  // \u1faa GREEK CAPITAL LETTER OMEGA WITH PSILI AND VARIA AND PROSGEGRAMMENI
 
 	// Rough breathing, grave accent, and ypogegrammeni
-	`ᾃ`: `a(\\|`,   // \u1f83
-	`ᾓ`: `h)\\|`,   // \u1f93
-	`ᾣ`: `w)\\|`,   // \u1fa3
-	`ᾋ`: `*(\\\a|`, // \u1f8b
-	`ᾛ`: `*)\\h|`,  // \u1f9b
-	`ᾫ`: `*)\\w|`,  // \u1fab
+	`ᾃ`: `a(\\|`,   // \u1f83 GREEK SMALL LETTER ALPHA WITH DASIA AND VARIA AND YPOGEGRAMMENI
+	`ᾓ`: `h)\\|`,   // \u1f93 GREEK SMALL LETTER ETA WITH DASIA AND VARIA AND YPOGEGRAMMENI
+	`ᾣ`: `w)\\|`,   // \u1fa3 GREEK SMALL LETTER OMEGA WITH DASIA AND VARIA AND YPOGEGRAMMENI
+	`ᾋ`: `*(\\\a|`, // \u1f8b GREEK CAPITAL LETTER ALPHA WITH DASIA AND VARIA AND PROSGEGRAMMENI
+	`ᾛ`: `*)\\h|`,  // \u1f9b GREEK CAPITAL LETTER ETA WITH DASIA AND VARIA AND PROSGEGRAMMENI
+	`ᾫ`: `*)\\w|`,  // \u1fab GREEK CAPITAL LETTER OMEGA WITH DASIA AND VARIA AND PROSGEGRAMMENI
 
 	// Smooth breathing, accute accent, and ypogegrammeni
-	`ᾄ`: `a)/|`,  // \u1f84
-	`ᾔ`: `h)/|`,  // \u1f94
-	`ᾤ`: `w)/|`,  // \u1fa4
-	`ᾌ`: `*)/a|`, // \u1f8c
-	`ᾜ`: `*)/h|`, // \u1f9c
-	`ᾬ`: `*)/w|`, // \u1fac
+	`ᾄ`: `a)/|`,  // \u1f84 GREEK SMALL LETTER ALPHA WITH PSILI AND OXIA AND YPOGEGRAMMENI
+	`ᾔ`: `h)/|`,  // \u1f94 GREEK SMALL LETTER ETA WITH PSILI AND OXIA AND YPOGEGRAMMENI
+	`ᾤ`: `w)/|`,  // \u1fa4 GREEK SMALL LETTER OMEGA WITH PSILI AND OXIA AND YPOGEGRAMMENI
+	`ᾌ`: `*)/a|`, // \u1f8c GREEK CAPITAL LETTER ALPHA WITH PSILI AND OXIA AND PROSGEGRAMMENI
+	`ᾜ`: `*)/h|`, // \u1f9c GREEK CAPITAL LETTER ETA WITH PSILI AND OXIA AND PROSGEGRAMMENI
+	`ᾬ`: `*)/w|`, // \u1fac GREEK CAPITAL LETTER OMEGA WITH PSILI AND OXIA AND PROSGEGRAMMENI
 
 	// Rough breating, acute accent, and ypogegrammeni
-	`ᾅ`: `a(/|`,  // \u1f85
-	`ᾕ`: `h(/|`,  // \u1f95
-	`ᾥ`: `w(/|`,  // \u1fa5
-	`ᾍ`: `*(/a|`, // \u1f8d
-	`ᾝ`: `*(/h|`, // \u1f9d
-	`ᾭ`: `*(/w|`, // \u1fad
+	`ᾅ`: `a(/|`,  // \u1f85 GREEK SMALL LETTER ALPHA WITH DASIA AND OXIA AND YPOGEGRAMMENI
+	`ᾕ`: `h(/|`,  // \u1f95 GREEK SMALL LETTER ETA WITH DASIA AND OXIA AND YPOGEGRAMMENI
+	`ᾥ`: `w(/|`,  // \u1fa5 GREEK SMALL LETTER OMEGA WITH DASIA AND OXIA AND YPOGEGRAMMENI
+	`ᾍ`: `*(/a|`, // \u1f8d GREEK CAPITAL LETTER ALPHA WITH DASIA AND OXIA AND PROSGEGRAMMENI
+	`ᾝ`: `*(/h|`, // \u1f9d GREEK CAPITAL LETTER ETA WITH DASIA AND OXIA AND PROSGEGRAMMENI
+	`ᾭ`: `*(/w|`, // \u1fad GREEK CAPITAL LETTER OMEGA WITH DASIA AND OXIA AND PROSGEGRAMMENI
 
 	// Smooth breathing, ypogegrammeni, and perispomeni
-	`ᾆ`: `a)=|`,  // \u1f86
-	`ᾖ`: `h)=|`,  // \u1f96
-	`ᾦ`: `w)=|`,  // \u1fa6
-	`ᾎ`: `*)=a|`, // \u1f8e
-	`ᾞ`: `*)=h|`, // \u1f9e
-	`ᾮ`: `*)=w|`, // \u1fae
+	`ᾆ`: `a)=|`,  // \u1f86 GREEK SMALL LETTER ALPHA WITH PSILI AND PERISPOMENI AND YPOGEGRAMMENI
+	`ᾖ`: `h)=|`,  // \u1f96 GREEK SMALL LETTER ETA WITH PSILI AND PERISPOMENI AND YPOGEGRAMMENI
+	`ᾦ`: `w)=|`,  // \u1fa6 GREEK SMALL LETTER OMEGA WITH PSILI AND PERISPOMENI AND YPOGEGRAMMENI
+	`ᾎ`: `*)=a|`, // \u1f8e GREEK CAPITAL LETTER ALPHA WITH PSILI AND PERISPOMENI AND PROSGEGRAMMENI
+	`ᾞ`: `*)=h|`, // \u1f9e GREEK CAPITAL LETTER ETA WITH PSILI AND PERISPOMENI AND PROSGEGRAMMENI
+	`ᾮ`: `*)=w|`, // \u1fae GREEK CAPITAL LETTER OMEGA WITH PSILI AND PERISPOMENI AND PROSGEGRAMMENI
 
 	// Rough breathing, ypogegrammeni, and perispomeni
-	`ᾇ`: `a(=|`,  // \u1f87
-	`ᾗ`: `h(=|`,  // \u1f97
-	`ᾧ`: `w(=|`,  // \u1fa7
-	`ᾏ`: `*(=a|`, // \u1f8f
-	`ᾟ`: `*(=h|`, // \u1f9f
-	`ᾯ`: `*(=w|`, // \u1faf
+	`ᾇ`: `a(=|`,  // \u1f87 GREEK SMALL LETTER ALPHA WITH DASIA AND PERISPOMENI AND YPOGEGRAMMENI
+	`ᾗ`: `h(=|`,  // \u1f97 GREEK SMALL LETTER ETA WITH DASIA AND PERISPOMENI AND YPOGEGRAMMENI
+	`ᾧ`: `w(=|`,  // \u1fa7 GREEK SMALL LETTER OMEGA WITH DASIA AND PERISPOMENI AND YPOGEGRAMMENI
+	`ᾏ`: `*(=a|`, // \u1f8f GREEK CAPITAL LETTER ALPHA WITH DASIA AND PERISPOMENI AND PROSGEGRAMMENI
+	`ᾟ`: `*(=h|`, // \u1f9f GREEK CAPITAL LETTER ETA WITH DASIA AND PERISPOMENI AND PROSGEGRAMMENI
+	`ᾯ`: `*(=w|`, // \u1faf GREEK CAPITAL LETTER OMEGA WITH DASIA AND PERISPOMENI AND PROSGEGRAMMENI
 
 	// Diaeresis
-	`ϊ`: `i+`,   // \u03ca
-	`Ϊ`: `*+i`,  // \u03aa
-	`ῒ`: `i\\+`, // \u1fd2
-	`ῗ`: `i=+`,  // \u1fd7
-	`ϋ`: `u+`,   // \u03cb
-	`Ϋ`: `*+u`,  // \u03ab
-	`ῢ`: `u\\+`, // \u1fe2
-	`ΰ`: `u/+`,  // \u1fe3
-	`ῧ`: `u=+`,  // \u1fe7
+	`ϊ`: `i+`,   // \u03ca GREEK SMALL LETTER IOTA WITH DIALYTIKA
+	`Ϊ`: `*+i`,  // \u03aa GREEK CAPITAL LETTER IOTA WITH DIALYTIKA
+	`ῒ`: `i\\+`, // \u1fd2 GREEK SMALL LETTER IOTA WITH DIALYTIKA AND VARIA
+	`ῗ`: `i=+`,  // \u1fd7 GREEK SMALL LETTER IOTA WITH DIALYTIKA AND PERISPOMENI
+	`ϋ`: `u+`,   // \u03cb GREEK SMALL LETTER UPSILON WITH DIALYTIKA
+	`Ϋ`: `*+u`,  // \u03ab GREEK CAPITAL LETTER UPSILON WITH DIALYTIKA
+	`ῢ`: `u\\+`, // \u1fe2 GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND VARIA
+	`ΰ`: `u/+`,  // \u1fe3 GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND OXIA
+	`ῧ`: `u=+`,  // \u1fe7 GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND PERISPOMENI
 
 	// Macron
-	`ᾰ`: `a&`, // \u1fb0
-	`ῐ`: `i&`, // \u1fd0
-	`ῠ`: `u&`, // \u1fe0
+	`ᾰ`: `a&`, // \u1fb0 GREEK SMALL LETTER ALPHA WITH VRACHY
+	`ῐ`: `i&`, // \u1fd0 GREEK SMALL LETTER IOTA WITH VRACHY
+	`ῠ`: `u&`, // \u1fe0 GREEK SMALL LETTER UPSILON WITH VRACHY
 
 	// Breve
-	`ᾱ`: `a\'`, // \u1fb1
-	`ῑ`: `i\'`, // \u1fd1
-	`ῡ`: `u\'`, // \u1fe1
+	`ᾱ`: `a\'`, // \u1fb1 GREEK SMALL LETTER ALPHA WITH MACRON
+	`ῑ`: `i\'`, // \u1fd1 GREEK SMALL LETTER IOTA WITH MACRON
+	`ῡ`: `u\'`, // \u1fe1 GREEK SMALL LETTER UPSILON WITH MACRON
 
 	// Basic punctuation
-	`·`: `:`,  // \u00b7
-	`’`: `\'`, // \u2019
-	`‐`: `-`,  // \u2010
-	`—`: `_`,  // \u2014
+	`·`: `:`,  // \u00b7 GREEK MIDDLE DOT
+	`’`: `\'`, // \u2019 RIGHT SINGLE QUOTATION MARK
+	`‐`: `-`,  // \u2010 HYPHEN
+	`—`: `_`,  // \u2014 EM DASH
 }
