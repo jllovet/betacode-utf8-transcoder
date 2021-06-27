@@ -18,6 +18,7 @@ func TestUniToBeta(t *testing.T) {
 		description string
 	}{
 		{``, ``, "Empty"},
+		{`α`, `a`, "Single Simple Letter"},
 		{`αβ`, `ab`, "Simple Conversion"},
 		{`βίον τέχνης καὶ εὐδαιμονίας.`, `bi/on te/xnhs kai\ eu)daimoni/as.`, "Multi-Word"},
 		{`Ἔφορος καὶ ἄλλοι`, `*)/eforos kai\ a)/lloi`, "Multiple Accents"},
@@ -35,6 +36,8 @@ func TestUniToBeta(t *testing.T) {
 				"Case %s failed.\nConversion of %q to %q was incorrect.\nGot: %q\nWant: %q.",
 				table.description, table.uni, table.beta, ucbn, bn,
 			)
+		} else {
+			t.Logf("Case %s passed", table.description)
 		}
 	}
 }
@@ -50,6 +53,7 @@ func TestBetaToUni(t *testing.T) {
 		description string
 	}{
 		{``, ``, "Empty"},
+		{`t`, `τ`, "Single Simple Letter"},
 		{`tou=`, `τοῦ`, "Simple Conversion"},
 		{`th=s`, `τῆς`, "Final Sigma"},
 		{`th=s2`, `τῆς`, "Numeric Sigma Id"},
@@ -79,6 +83,8 @@ func TestBetaToUni(t *testing.T) {
 				"Case %s failed.\nConversion of %q to %q was incorrect.\nGot: %q\nWant: %q.",
 				table.description, table.beta, table.uni, bcun, un,
 			)
+		} else {
+			t.Logf("Case %s passed", table.description)
 		}
 	}
 }
