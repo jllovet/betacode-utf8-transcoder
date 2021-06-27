@@ -36,18 +36,23 @@ go get github.com/jllovet/betacode-utf8-transcoder
 - [The Go Blog - Text normalization in Go](https://blog.golang.org/normalization)
 - [Unicode Programming - Unicode Normalization in Go](https://unicode-programming.readthedocs.io/en/latest/normalization/go/)
 
-### Trie Data Structure
+#### Trie, Trie, Trie Again
 
-#### Videos
+##### Videos
 
 - [YouTube - HackerRank - Data Structures: Tries](https://www.youtube.com/watch?v=zIjfhVPRZCg)
 - [YouTube - Jacob Sorber - The Trie Data Structure (Prefix Tree)](https://www.youtube.com/watch?v=3CbFFVHQrk4)
 - [YouTube - Implement Trie | Leetcode #208 - Techn Dose](https://www.youtube.com/watch?v=xqsaAhQC6c8)
 - [YouTube - Tech Dose - Trie Playlist](https://www.youtube.com/watch?v=6PX6wqDQE20&list=PLEJXowNB4kPyi859E6qGUs7jlpQehJndl)
 
-#### Articles
+##### Articles
 - [Wikipedia - Trie](https://en.wikipedia.org/wiki/Trie)
 - [Medium - Vaidehi Joshi - Trying to Understand Tries](https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014)
+- [Stack Overflow - Ukkonen's suffix tree algorithm in plain English](https://stackoverflow.com/questions/9452701/ukkonens-suffix-tree-algorithm-in-plain-english)
+- [Suffix Trees and Their Applications - Bálint Márk Vásárhelyi](http://berkri.web.elte.hu//Theses/Vasarhelyi_2.pdf)
+- [Wikipedia - Longest Common Prefix Array](https://en.wikipedia.org/wiki/LCP_array)
+- [Suffix Arrays - A Programming Contest Approach - Adrian Vladu and Cosmin Negruşeri](https://web.stanford.edu/class/cs97si/suffix-array.pdf)
+- [Simple Linear Work Suffix Array Construction - Juha Kärkkäinen and Peter Sanders](https://www.cs.helsinki.fi/u/tpkarkka/publications/icalp03.pdf)
 
 ### Other Beta Code to UTF-8 Transcoders
 - [github.com/matgrioni/betacode](https://github.com/matgrioni/betacode)
