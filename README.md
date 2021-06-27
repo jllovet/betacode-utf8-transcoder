@@ -23,9 +23,16 @@ go get github.com/jllovet/betacode-utf8-transcoder
 ### Unicode Normalization
 - [YouTube - Unicode Normalization for NLP in Python - James Briggs](https://www.youtube.com/watch?v=9Od9-DV9kd8)
 - [Medium - What on Earth is Unicode Normalization? - James Briggs](https://towardsdatascience.com/what-on-earth-is-unicode-normalization-56c005c55ad0)
+- [YouTube - Practical Serialization In Go: Unicode Normalization - Ardan Labs](https://www.youtube.com/watch?v=kOFIToH9KSY)
 
 ### Unicode Normalization and Using Unicode in Go
 - [The Go Blog - Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
+    - Go source code is always UTF-8.
+    - A string holds arbitrary bytes.
+    - A string literal, absent byte-level escapes, always holds valid UTF-8 sequences.
+    - Those sequences represent Unicode code points, called runes.
+    - No guarantee is made in Go that characters in strings are normalized.
+
 - [The Go Blog - Text normalization in Go](https://blog.golang.org/normalization)
 - [Unicode Programming - Unicode Normalization in Go](https://unicode-programming.readthedocs.io/en/latest/normalization/go/)
 
