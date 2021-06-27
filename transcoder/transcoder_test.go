@@ -22,7 +22,7 @@ func TestUniToBeta(t *testing.T) {
 		{`αβ`, `ab`, "Simple Conversion"},
 		{`βίον τέχνης καὶ εὐδαιμονίας.`, `bi/on te/xnhs kai\ eu)daimoni/as.`, "Multi-Word"},
 		{`Ἔφορος καὶ ἄλλοι`, `*)/eforos kai\ a)/lloi`, "Multiple Accents"},
-		{`πλείους: ἔτι δὲ οἱ μετὰ`, `plei/ous: e)/ti de\ oi( meta\\`, "Colon Punctuation"},
+		{`πλείους: ἔτι δὲ οἱ μετὰ`, `plei/ous: e)/ti de\ oi( meta\`, "Colon Punctuation"},
 		{`Let's see if we can convert this: ἔτι δὲ οἱ`, `Let's see if we can convert this: e)/ti de\ oi(`, "Mixed Conversion / Multi-Language"},
 	}
 	for _, table := range tables {
@@ -63,9 +63,9 @@ func TestBetaToUni(t *testing.T) {
 		{`th=s; tou=`, `τῆς; τοῦ`, "Final Sigma Punctuation"},
 		{`th=s\' tou=`, `τῆσ’ τοῦ`, "Final Sigma Apostrophe"},
 		{`analabo/ntes de\ kaq\' e(/kaston`, `αναλαβόντες δὲ καθ’ ἕκαστον`, "Multi Word"},
-		{`e)/oiken h)\ dida/skonti; nh\\`, `ἔοικεν ἢ διδάσκοντι; νὴ`, "Punctuation Semicolon"},
+		{`e)/oiken h)\ dida/skonti; nh\`, `ἔοικεν ἢ διδάσκοντι; νὴ`, "Punctuation Semicolon"},
 		{`dh=lon: oi(/ te`, `δῆλον· οἵ τε`, "Punctuation Colon"},
-		{`e/)oiken h\) dida/skonti; nh\\ a=|)i+\\`, `ἔοικεν ἢ διδάσκοντι; νὴ ᾆῒ`, "Out of Order"},
+		{`e/)oiken h\) dida/skonti; nh\ a=|)i+\`, `ἔοικεν ἢ διδάσκοντι; νὴ ᾆῒ`, "Out of Order"},
 		{`*)/eforos ka*)/ei\ a/)lloi`, `Ἔφορος καἜὶ ἄλλοι`, "Capital Out of Order"},
 		{`*)/eforos ka*)/ei\ a/)lloi *)h\|`, `Ἔφορος καἜὶ ἄλλοι ᾛ`, "Capital Out of Order with Iota"},
 		{`e)n d\' e)\pes\' w)keanw=|`, `ἐν δ’ ἒπεσ’ ὠκεανῷ`, "Strict Correct"},
