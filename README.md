@@ -43,6 +43,7 @@ go get github.com/jllovet/betacode-utf8-transcoder
 
 ##### Videos
 
+- [YouTube - Data Structures in Golang - The trie data structure - Junmin Lee](https://www.youtube.com/watch?v=nL7BHR5vJDc)
 - [YouTube - HackerRank - Data Structures: Tries](https://www.youtube.com/watch?v=zIjfhVPRZCg)
 - [YouTube - Jacob Sorber - The Trie Data Structure (Prefix Tree)](https://www.youtube.com/watch?v=3CbFFVHQrk4)
 - [YouTube - Implement Trie | Leetcode #208 - Techn Dose](https://www.youtube.com/watch?v=xqsaAhQC6c8)
