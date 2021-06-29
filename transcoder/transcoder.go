@@ -2,12 +2,14 @@ package transcoder
 
 import (
 	"bufio"
+	"errors"
 	"io"
 	"log"
 	"strings"
 	"unicode"
 	"unicode/utf8"
-	// "github.com/golang-collections/collections/trie"
+
+	"github.com/jllovet/betacode-utf8-transcoder/trie"
 	// "golang.org/x/text/unicode/norm"
 )
 
@@ -40,10 +42,50 @@ func UniToBeta(uni string) (beta string, err error) {
 	return beta, err
 }
 
+// InitBetaToUniTrie creates a trie for converting from betacode to unicode.
+// It takes a bool value to indicate whether the betacode parsing is strict.
+// If true, diacritics must be in the officially specified order:
+// breathing, accent, iota subscript / dieresis
+// If false, diacritic parsing is more generous, allowing any order after the
+// initial letter or asterisk (which still must be in the first position).
+func InitBetaToUniTrie(strict bool) (t trie.Trie) {
+	t = *trie.Init()
+	for beta, uni := range BETACODE_MAP {
+		t.Update(beta, uni)
+	}
+	return t
+
+	// TODO: Implement non-strict parsing of diacritics: Reference python:
+	// t = pygtrie.CharTrie()
+
+	// for beta, uni in _map.BETACODE_MAP.items():
+	//     if strict:
+	//         t[beta] = uni
+	//     else:
+	//         # The order of accents is very strict and weak. Allow for many orders of
+	//         # accents between asterisk and letter or after letter. This does not
+	//         # introduce ambiguity since each betacode token only has one letter and
+	//         # either starts with a asterisk or a letter.
+	//         diacritics = beta[1:]
+
+	//         perms = itertools.permutations(diacritics)
+	//         for perm in perms:
+	//             perm_str = beta[0] + ''.join(perm)
+	//             t[perm_str.lower()] = uni
+	//             t[perm_str.upper()] = uni
+
+	// return t
+}
+
+var BetaToUniTrie trie.Trie = InitBetaToUniTrie(false)
+
 // BetaToUni converts a betacode string to a unicode string
 func BetaToUni(beta string) (uni string, err error) {
-	uni = string(BETACODE_MAP[beta])
-	return uni, err
+	uni, ok := BetaToUniTrie.Search(beta)
+	if !ok {
+		return "", errors.New("could not parse betacode")
+	}
+	return uni, nil
 }
 
 // findLongestBetaTokenLen returns the maximum length of a single betacode token
