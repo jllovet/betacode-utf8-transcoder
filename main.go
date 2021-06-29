@@ -27,9 +27,6 @@ func main() {
 }
 
 func dfs(n *trie.Node, padding string) {
-	// if len(n.Children) == 0 {
-	// 	return true
-	// }
 	for c := range n.Children {
 		fmt.Printf("%s%+v\n", padding, n.Children[c])
 		dfs(n.Children[c], padding+"  ")
