@@ -18,9 +18,10 @@ func main() {
 	t := transcoder.InitBetaToUniTrie(false)
 	// dfs(t.Root, "")
 
-	s, ok := t.Search(`e)/`)
+	beta := `e)/`
+	s, ok := t.Search(beta)
 	if ok {
-		fmt.Println(s)
+		fmt.Println(beta, "becomes: ", s)
 	}
 
 	// fmt.Printf("%+v\n", t.Root.Children)
