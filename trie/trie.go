@@ -41,8 +41,8 @@ func Init() *Trie {
 func (t *Trie) Update(k string, v string) {
 	currentNode := t.Root
 	l := utf8.RuneCountInString(k)
-	for c := 0; c < l; c++ {
-		s := string(k[c])
+	for i := 0; i < l; i++ {
+		s := string(k[i])
 		if _, ok := currentNode.Children[s]; !ok {
 			child := &Node{
 				Data:     s,
