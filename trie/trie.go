@@ -61,11 +61,15 @@ func (t *Trie) Update(k string, v string) {
 	currentNode.IsEnd = true
 }
 
+// Search attempts to retrieve the corresponding value for the key provided
+// It provides a similar experience to referencing a key, value pair in a map
+// where both the string value and a bool are returned if the key is found;
+// otherwise, it returns an empty string and false.
 func (t *Trie) Search(k string) (s string, ok bool) {
 	currentNode := t.Root
 	l := utf8.RuneCountInString(k)
-	for c := 0; c < l; c++ {
-		s := string(k[c])
+	for i := 0; i < l; i++ {
+		s := string(k[i])
 		if _, ok := currentNode.Children[s]; ok {
 			currentNode = currentNode.Children[s]
 		} else {
