@@ -1,6 +1,6 @@
 package transcoder
 
-var BETACODE_MAP = map[string]string{
+var BetacodeMap = map[string]string{
 	// No marks
 	`a`:   "\u03b1", // GREEK SMALL LETTER ALPHA
 	`b`:   "\u03b2", // GREEK SMALL LETTER BETA

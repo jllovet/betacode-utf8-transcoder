@@ -50,7 +50,7 @@ func UniToBeta(uni string) (beta string, err error) {
 // initial letter or asterisk (which still must be in the first position).
 func InitBetaToUniTrie(strict bool) (t trie.Trie) {
 	t = *trie.Init()
-	for beta, uni := range BETACODE_MAP {
+	for beta, uni := range BetacodeMap {
 		t.Update(beta, uni)
 	}
 	return t
@@ -99,7 +99,7 @@ func findLongestBetaTokenLen(BETACODE_MAP map[string]string) (maxBetaTokenLen in
 	return
 }
 
-var maxBetaTokenLen int = findLongestBetaTokenLen(BETACODE_MAP)
+var maxBetaTokenLen int = findLongestBetaTokenLen(BetacodeMap)
 
 // Special characters that need their own references to rewrite with
 var finalLowerCaseSigma string = `ς`  // `s2`, \u03c2
