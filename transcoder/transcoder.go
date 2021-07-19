@@ -48,7 +48,7 @@ func UniToBeta(uni string) (beta string, err error) {
 // breathing, accent, iota subscript / dieresis
 // If false, diacritic parsing is more generous, allowing any order after the
 // initial letter or asterisk (which still must be in the first position).
-func InitBetaToUniTrie(strict bool) (t trie.Trie) {
+func InitBetaToUniTrie() (t trie.Trie) {
 	t = *trie.Init()
 	for beta, uni := range BetacodeMap {
 		t.Update(beta, uni)
@@ -77,7 +77,7 @@ func InitBetaToUniTrie(strict bool) (t trie.Trie) {
 	// return t
 }
 
-var BetaToUniTrie trie.Trie = InitBetaToUniTrie(false)
+var BetaToUniTrie trie.Trie = InitBetaToUniTrie()
 
 // BetaToUni converts a betacode string to a unicode string
 func BetaToUni(beta string) (uni string, err error) {
