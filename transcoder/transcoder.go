@@ -30,7 +30,7 @@ func UniToBeta(uni string) (beta string, err error) {
 		} else {
 			// check whether betacode value in map
 			if b, ok := u[string(r)]; ok {
-				// found in unicode map, replace with betacode value
+				// found in unicode map, transform value
 				t = append(t, b)
 			} else {
 				// not found in unicode map, keep value
