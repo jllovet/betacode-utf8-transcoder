@@ -1,6 +1,6 @@
 package transcoder
 
-var UNICODE_MAP = map[string]string{
+var UnicodeMap = map[string]string{
 	// No marks
 	`α`: `a`,  // \u03b1 GREEK SMALL LETTER ALPHA
 	`β`: `b`,  // \u03b2 GREEK SMALL LETTER BETA

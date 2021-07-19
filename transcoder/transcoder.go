@@ -15,7 +15,7 @@ import (
 
 // UniToBeta converts a unicode string to a betacode string
 func UniToBeta(uni string) (beta string, err error) {
-	u := UNICODE_MAP
+	u := UnicodeMap
 
 	t := []string{} // transformed characters in string
 	b := bufio.NewReader(strings.NewReader(uni))
