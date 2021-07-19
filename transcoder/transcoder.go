@@ -54,27 +54,6 @@ func InitBetaToUniTrie() (t trie.Trie) {
 		t.Update(beta, uni)
 	}
 	return t
-
-	// TODO: Implement non-strict parsing of diacritics: Reference python:
-	// t = pygtrie.CharTrie()
-
-	// for beta, uni in _map.BETACODE_MAP.items():
-	//     if strict:
-	//         t[beta] = uni
-	//     else:
-	//         # The order of accents is very strict and weak. Allow for many orders of
-	//         # accents between asterisk and letter or after letter. This does not
-	//         # introduce ambiguity since each betacode token only has one letter and
-	//         # either starts with a asterisk or a letter.
-	//         diacritics = beta[1:]
-
-	//         perms = itertools.permutations(diacritics)
-	//         for perm in perms:
-	//             perm_str = beta[0] + ''.join(perm)
-	//             t[perm_str.lower()] = uni
-	//             t[perm_str.upper()] = uni
-
-	// return t
 }
 
 var BetaToUniTrie trie.Trie = InitBetaToUniTrie()
