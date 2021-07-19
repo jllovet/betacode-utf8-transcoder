@@ -17,7 +17,7 @@ import (
 func UniToBeta(uni string) (beta string, err error) {
 	u := UNICODE_MAP
 
-	transform := []string{}
+	t := []string{} // transformed characters in string
 	b := bufio.NewReader(strings.NewReader(uni))
 	for {
 		if r, _, err := b.ReadRune(); err != nil {
@@ -29,16 +29,16 @@ func UniToBeta(uni string) (beta string, err error) {
 			}
 		} else {
 			// check whether betacode value in map
-			if betaValue, ok := u[string(r)]; ok {
+			if b, ok := u[string(r)]; ok {
 				// found in unicode map, replace with betacode value
-				transform = append(transform, betaValue)
+				t = append(t, b)
 			} else {
 				// not found in unicode map, keep value
-				transform = append(transform, string(r))
+				t = append(t, string(r))
 			}
 		}
 	}
-	beta = strings.Join(transform, "")
+	beta = strings.Join(t, "")
 	return beta, err
 }
 
