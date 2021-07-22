@@ -2,9 +2,7 @@ package transcoder
 
 import (
 	"bufio"
-	"errors"
 	"io"
-	"log"
 	"strings"
 	"unicode"
 	"unicode/utf8"
@@ -24,7 +22,6 @@ func UniToBeta(uni string) (beta string, err error) {
 			if err == io.EOF {
 				break
 			} else {
-				log.Fatal(err)
 				return "", err
 			}
 		} else {
@@ -60,11 +57,49 @@ var BetaToUniTrie trie.Trie = InitBetaToUniTrie()
 
 // BetaToUni converts a betacode string to a unicode string
 func BetaToUni(beta string) (uni string, err error) {
-	uni, ok := BetaToUniTrie.Search(beta)
-	if !ok {
-		return "", errors.New("could not parse betacode")
+	t := []string{}
+	// var i int
+	var pwb bool // possible word boundary
+
+	i := 0
+	for i < utf8.RuneCountInString(beta) {
+		if pwb && penultimateSigmaWordFinal(strings.Join(t, "")) {
+			t[len(t)-2] = finalLowerCaseSigma
+		}
+		k, v := BetaToUniTrie.LongestPrefix(beta[i:findFinalIndex(beta, i)])
+		if err != nil {
+			return "", err
+		}
+		if k != "" {
+			pwb = betaPunctuation[string(beta[i])] // checks for presence of current character in set
+			t = append(t, v)
+			i += len(k)
+		} else {
+			pwb = true
+			t = append(t, string(beta[i]))
+			i += 1
+		}
 	}
+
+	// Check one last time in case there is some whitespace or punctuation at the
+	// end and check if the last character is a sigma.
+	if pwb && penultimateSigmaWordFinal(strings.Join(t, "")) {
+		t[len(t)-2] = finalLowerCaseSigma
+	} else if len(t) > 0 && t[len(t)-1] == medialLowerCaseSigma {
+		t[len(t)-1] = finalLowerCaseSigma
+	}
+	uni = strings.Join(t, "")
 	return uni, nil
+}
+
+func findFinalIndex(beta string, idx int) int {
+	var finalIndex int
+	if idx+maxBetaTokenLen > utf8.RuneCountInString(beta) {
+		finalIndex = utf8.RuneCountInString(beta)
+	} else {
+		finalIndex = idx + maxBetaTokenLen
+	}
+	return finalIndex
 }
 
 // findLongestBetaTokenLen returns the maximum length of a single betacode token
@@ -84,11 +119,11 @@ var maxBetaTokenLen int = findLongestBetaTokenLen(BetacodeMap)
 var finalLowerCaseSigma string = `ς`  // `s2`, \u03c2
 var medialLowerCaseSigma string = `σ` // `s`,  \u03c3
 var betaApostrophe string = `’`       // `\'` \u2019
-var betaPunctuation []string = []string{
-	`·`, // `:`,  \u00b7
-	`’`, // `\'`, \u2019
-	`‐`, // `-`,  \u2010
-	`—`, // `_`,  \u2014
+var betaPunctuation = map[string]bool{
+	`:`: true, // `·`,  \u00b7
+	`'`: true, // `’`, \u2019
+	`-`: true, // `‐`,  \u2010
+	`_`: true, // `—`,  \u2014
 }
 
 // penultimateSigmaWordFinal returns whether the penultimate character is a sigma

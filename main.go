@@ -2,27 +2,31 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 
 	"github.com/jllovet/betacode-utf8-transcoder/transcoder"
 	"github.com/jllovet/betacode-utf8-transcoder/trie"
 )
 
 func main() {
-	// fmt.Println(transcoder.FindLongestBetaTokenLen(transcoder.BETACODE_MAP))
-	// text := "apple pie"
-	// l := utf8.RuneCountInString(text) // length in runes
-	// penultimateRune := string(text[l-2])
-	// fmt.Println(penultimateRune)
-	// fmt.Println(string(transcoder.BetaToUni("s2")))
-	// fmt.Println(string(transcoder.UniToBeta("α")))
-	t := transcoder.InitBetaToUniTrie(false)
+	f, err := os.OpenFile("transcoder.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatalf("error opening file: %v", err)
+	}
+	defer f.Close()
+	log.SetOutput(f)
+
+	t := transcoder.InitBetaToUniTrie()
 	// dfs(t.Root, "")
 
-	beta := `e)/`
-	s, ok := t.Search(beta)
-	if ok {
-		fmt.Println(beta, "becomes: ", s)
+	beta := os.Args[1]
+	t.LongestPrefix(beta)
+	s, err := transcoder.BetaToUni(beta)
+	if err != nil {
+		log.Fatal(err)
 	}
+	fmt.Println(beta, "becomes: ", s)
 
 	// fmt.Printf("%+v\n", t.Root.Children)
 }

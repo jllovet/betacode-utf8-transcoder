@@ -82,3 +82,29 @@ func (t *Trie) Search(k string) (s string, ok bool) {
 	}
 	return s, true
 }
+func (t *Trie) longestPrefixNode(k string) (n *Node, ok bool) {
+	l := utf8.RuneCountInString(k)
+	if l < 1 {
+		return &Node{}, false
+	}
+	currentNode := t.Root
+	for i := 0; i < l; i++ {
+		s := string(k[i])
+		if _, ok := currentNode.Children[s]; ok {
+			currentNode = currentNode.Children[s]
+		} else if i == 0 {
+			return &Node{}, false
+		} else {
+			return currentNode, true
+		}
+	}
+	return currentNode, true
+}
+
+func (t *Trie) LongestPrefix(s string) (k string, v string) {
+	if n, ok := t.longestPrefixNode(s); !ok {
+		return "", ""
+	} else {
+		return n.Key, n.Val
+	}
+}
