@@ -63,7 +63,7 @@ func BetaToUni(beta string) (uni string, err error) {
 
 	i := 0
 	for i < utf8.RuneCountInString(beta) {
-		if pwb && penultimateSigmaWordFinal(strings.Join(t, "")) {
+		if pwb && convertFinalSigma(strings.Join(t, "")) {
 			t[len(t)-2] = finalLowerCaseSigma
 		}
 		k, v := BetaToUniTrie.LongestPrefix(beta[i:findFinalIndex(beta, i)])
@@ -83,7 +83,7 @@ func BetaToUni(beta string) (uni string, err error) {
 
 	// Check one last time in case there is some whitespace or punctuation at the
 	// end and check if the last character is a sigma.
-	if pwb && penultimateSigmaWordFinal(strings.Join(t, "")) {
+	if pwb && convertFinalSigma(strings.Join(t, "")) {
 		t[len(t)-2] = finalLowerCaseSigma
 	} else if len(t) > 0 && t[len(t)-1] == medialLowerCaseSigma {
 		t[len(t)-1] = finalLowerCaseSigma
@@ -116,23 +116,50 @@ func findLongestBetaTokenLen(BETACODE_MAP map[string]string) (maxBetaTokenLen in
 var maxBetaTokenLen int = findLongestBetaTokenLen(BetacodeMap)
 
 // Special characters that need their own references to rewrite with
-var finalLowerCaseSigma string = `ς`  // `s2`, \u03c2
-var medialLowerCaseSigma string = `σ` // `s`,  \u03c3
-var betaApostrophe string = `’`       // `\'` \u2019
+var finalLowerCaseSigma string = `ς`  // `ς`, `s2`, \u03c2
+var medialLowerCaseSigma string = `σ` // `σ`, `s`,  \u03c3
+var betaApostrophe string = `’`       // `’`, `\'` \u2019
 var betaPunctuation = map[string]bool{
-	`:`: true, // `·`,  \u00b7
-	`'`: true, // `’`, \u2019
-	`-`: true, // `‐`,  \u2010
-	`_`: true, // `—`,  \u2014
+	`:`: true, // `·`, `:`,  \u00b7
+	`'`: true, // `’`, `'`,  \u2019
+	`-`: true, // `‐`, `-`,  \u2010
+	`_`: true, // `—`, `_`,  \u2014
+	` `: true,
 }
 
-// penultimateSigmaWordFinal returns whether the penultimate character is a sigma
+// convertFinalSigma returns whether the penultimate character is a sigma
 // and is in a context where it should be treated as a medial sigma
-func penultimateSigmaWordFinal(text string) (p bool) {
+func convertFinalSigma(text string) (p bool) {
+
 	l := utf8.RuneCountInString(text) // length in runes
-	p = utf8.RuneCountInString(text) > 1 &&
-		string(text[l-2]) == medialLowerCaseSigma &&
-		!unicode.IsLetter(rune(text[l-1])) &&
-		string(text[l-1]) != betaApostrophe
+
+	var mlcs bool // Last letter is medial lower-case sigma
+	var lcl bool  // Last character is a letter
+	var ba bool   // Last character is a beta apostrophe
+
+	n := 1
+	for _, r := range text {
+		if n == l-1 {
+			if string(r) == medialLowerCaseSigma {
+				mlcs = true // Last letter is medial lower-case sigma
+			}
+		}
+		if n == l {
+			if unicode.IsLetter(r) {
+				lcl = true // Last character is a letter
+			}
+			if string(r) == betaApostrophe {
+				ba = true // Last character is a beta apostrophe
+			}
+
+		}
+		n += 1
+	}
+
+	p = l > 1 &&
+		mlcs &&
+		!lcl &&
+		!ba
+
 	return p
 }

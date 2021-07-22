@@ -322,112 +322,112 @@ var BetacodeMap = map[string]string{
 
 	// Acute accent and grave accent
 
-	`a\\`: "\u1f70", // GREEK SMALL LETTER ALPHA WITH VARIA
-	`A\\`: "\u1f70",
+	`a\`: "\u1f70", // GREEK SMALL LETTER ALPHA WITH VARIA
+	`A\`: "\u1f70",
 
 	`a/`: "\u1f71", // GREEK SMALL LETTER ALPHA WITH OXIA
 	`A/`: "\u1f71",
 
-	`e\\`: "\u1f72", // GREEK SMALL LETTER EPSILON WITH VARIA
-	`E\\`: "\u1f72",
+	`e\`: "\u1f72", // GREEK SMALL LETTER EPSILON WITH VARIA
+	`E\`: "\u1f72",
 
 	`e/`: "\u1f73", // GREEK SMALL LETTER EPSILON WITH OXIA
 	`E/`: "\u1f73",
 
-	`h\\`: "\u1f74", // GREEK SMALL LETTER ETA WITH VARIA
-	`H\\`: "\u1f74",
+	`h\`: "\u1f74", // GREEK SMALL LETTER ETA WITH VARIA
+	`H\`: "\u1f74",
 
 	`h/`: "\u1f75", // GREEK SMALL LETTER ETA WITH OXIA
 	`H/`: "\u1f75",
 
-	`i\\`: "\u1f76", // GREEK SMALL LETTER IOTA WITH VARIA
-	`I\\`: "\u1f76",
+	`i\`: "\u1f76", // GREEK SMALL LETTER IOTA WITH VARIA
+	`I\`: "\u1f76",
 
 	`i/`: "\u1f77", // GREEK SMALL LETTER IOTA WITH OXIA
 	`I/`: "\u1f77",
 
-	`o\\`: "\u1f78", // GREEK SMALL LETTER OMICRON WITH VARIA
-	`O\\`: "\u1f78",
+	`o\`: "\u1f78", // GREEK SMALL LETTER OMICRON WITH VARIA
+	`O\`: "\u1f78",
 
 	`o/`: "\u1f79", // GREEK SMALL LETTER OMICRON WITH OXIA
 	`O/`: "\u1f79",
 
-	`u\\`: "\u1f7a", // GREEK SMALL LETTER UPSILON WITH VARIA
-	`U\\`: "\u1f7a",
+	`u\`: "\u1f7a", // GREEK SMALL LETTER UPSILON WITH VARIA
+	`U\`: "\u1f7a",
 
 	`u/`: "\u1f7b", // GREEK SMALL LETTER UPSILON WITH OXIA
 	`U/`: "\u1f7b",
 
-	`w\\`: "\u1f7c", // GREEK SMALL LETTER OMEGA WITH VARIA
-	`W\\`: "\u1f7c",
+	`w\`: "\u1f7c", // GREEK SMALL LETTER OMEGA WITH VARIA
+	`W\`: "\u1f7c",
 
 	`w/`: "\u1f7d", // GREEK SMALL LETTER OMEGA WITH OXIA
 	`W/`: "\u1f7d",
 
-	`*\\a`: "\u1fba", // GREEK CAPITAL LETTER ALPHA WITH VARIA
-	`*a\\`: "\u1fba",
-	`*A\\`: "\u1fba",
-	`*\\A`: "\u1fba",
+	`*\a`: "\u1fba", // GREEK CAPITAL LETTER ALPHA WITH VARIA
+	`*a\`: "\u1fba",
+	`*A\`: "\u1fba",
+	`*\A`: "\u1fba",
 
 	`*/a`: "\u1fbb", // GREEK CAPITAL LETTER ALPHA WITH OXIA
 	`*a/`: "\u1fbb",
 	`*A/`: "\u1fbb",
 	`*/A`: "\u1fbb",
 
-	`*\\e`: "\u1fce", // GREEK PSILI AND OXIA
-	`*e\\`: "\u1fce",
-	`*E\\`: "\u1fce",
-	`*\\E`: "\u1fce",
+	`*\e`: "\u1fce", // GREEK PSILI AND OXIA
+	`*e\`: "\u1fce",
+	`*E\`: "\u1fce",
+	`*\E`: "\u1fce",
 
 	`*/e`: "\u1fc9", // GREEK CAPITAL LETTER EPSILON WITH OXIA
 	`*e/`: "\u1fc9",
 	`*E/`: "\u1fc9",
 	`*/E`: "\u1fc9",
 
-	`*\\h`: "\u1fca", // GREEK CAPITAL LETTER ETA WITH VARIA
-	`*h\\`: "\u1fca",
-	`*H\\`: "\u1fca",
-	`*\\H`: "\u1fca",
+	`*\h`: "\u1fca", // GREEK CAPITAL LETTER ETA WITH VARIA
+	`*h\`: "\u1fca",
+	`*H\`: "\u1fca",
+	`*\H`: "\u1fca",
 
 	`*/h`: "\u1fcb", // GREEK CAPITAL LETTER ETA WITH OXIA
 	`*h/`: "\u1fcb",
 	`*H/`: "\u1fcb",
 	`*/H`: "\u1fcb",
 
-	`*\\i`: "\u1fda", // GREEK CAPITAL LETTER IOTA WITH VARIA
-	`*i\\`: "\u1fda",
-	`*I\\`: "\u1fda",
-	`*\\I`: "\u1fda",
+	`*\i`: "\u1fda", // GREEK CAPITAL LETTER IOTA WITH VARIA
+	`*i\`: "\u1fda",
+	`*I\`: "\u1fda",
+	`*\I`: "\u1fda",
 
 	`*/i`: "\u1fdb", // GREEK CAPITAL LETTER IOTA WITH OXIA
 	`*i/`: "\u1fdb",
 	`*I/`: "\u1fdb",
 	`*/I`: "\u1fdb",
 
-	`*\\o`: "\u1ff8", // GREEK CAPITAL LETTER OMICRON WITH VARIA
-	`*o\\`: "\u1ff8",
-	`*O\\`: "\u1ff8",
-	`*\\O`: "\u1ff8",
+	`*\o`: "\u1ff8", // GREEK CAPITAL LETTER OMICRON WITH VARIA
+	`*o\`: "\u1ff8",
+	`*O\`: "\u1ff8",
+	`*\O`: "\u1ff8",
 
 	`*/o`: "\u1ff9", // GREEK CAPITAL LETTER OMICRON WITH OXIA
 	`*o/`: "\u1ff9",
 	`*O/`: "\u1ff9",
 	`*/O`: "\u1ff9",
 
-	`*\\u`: "\u1fea", // GREEK CAPITAL LETTER UPSILON WITH VARIA
-	`*u\\`: "\u1fea",
-	`*U\\`: "\u1fea",
-	`*\\U`: "\u1fea",
+	`*\u`: "\u1fea", // GREEK CAPITAL LETTER UPSILON WITH VARIA
+	`*u\`: "\u1fea",
+	`*U\`: "\u1fea",
+	`*\U`: "\u1fea",
 
 	`*/u`: "\u1feb", // GREEK CAPITAL LETTER UPSILON WITH OXIA
 	`*u/`: "\u1feb",
 	`*U/`: "\u1feb",
 	`*/U`: "\u1feb",
 
-	`*\\w`: "\u1ffa", // GREEK CAPITAL LETTER OMEGA WITH VARIA
-	`*w\\`: "\u1ffa",
-	`*W\\`: "\u1ffa",
-	`*\\W`: "\u1ffa",
+	`*\w`: "\u1ffa", // GREEK CAPITAL LETTER OMEGA WITH VARIA
+	`*w\`: "\u1ffa",
+	`*W\`: "\u1ffa",
+	`*\W`: "\u1ffa",
 
 	`*/w`: "\u1ffb", // GREEK CAPITAL LETTER OMEGA WITH OXIA
 	`*w/`: "\u1ffb",
@@ -590,131 +590,131 @@ var BetacodeMap = map[string]string{
 
 	// Smooth breathing and grave accent
 
-	`a)\\`: "\u1f02", // GREEK SMALL LETTER ALPHA WITH PSILI AND VARIA
-	`a\\)`: "\u1f02",
-	`A)\\`: "\u1f02",
-	`A\\)`: "\u1f02",
+	`a)\`: "\u1f02", // GREEK SMALL LETTER ALPHA WITH PSILI AND VARIA
+	`a\)`: "\u1f02",
+	`A)\`: "\u1f02",
+	`A\)`: "\u1f02",
 
-	`e)\\`: "\u1f12", // GREEK SMALL LETTER EPSILON WITH PSILI AND VARIA
-	`e\\)`: "\u1f12",
-	`E)\\`: "\u1f12",
-	`E\\)`: "\u1f12",
+	`e)\`: "\u1f12", // GREEK SMALL LETTER EPSILON WITH PSILI AND VARIA
+	`e\)`: "\u1f12",
+	`E)\`: "\u1f12",
+	`E\)`: "\u1f12",
 
-	`h)\\`: "\u1f22", // GREEK SMALL LETTER ETA WITH PSILI AND VARIA
-	`h\\)`: "\u1f22",
-	`H)\\`: "\u1f22",
-	`H\\)`: "\u1f22",
+	`h)\`: "\u1f22", // GREEK SMALL LETTER ETA WITH PSILI AND VARIA
+	`h\)`: "\u1f22",
+	`H)\`: "\u1f22",
+	`H\)`: "\u1f22",
 
-	`i)\\`: "\u1f32", // GREEK SMALL LETTER IOTA WITH PSILI AND VARIA
-	`i\\)`: "\u1f32",
-	`I)\\`: "\u1f32",
-	`I\\)`: "\u1f32",
+	`i)\`: "\u1f32", // GREEK SMALL LETTER IOTA WITH PSILI AND VARIA
+	`i\)`: "\u1f32",
+	`I)\`: "\u1f32",
+	`I\)`: "\u1f32",
 
-	`o)\\`: "\u1f42", // GREEK SMALL LETTER OMICRON WITH PSILI AND VARIA
-	`o\\)`: "\u1f42",
-	`O)\\`: "\u1f42",
-	`O\\)`: "\u1f42",
+	`o)\`: "\u1f42", // GREEK SMALL LETTER OMICRON WITH PSILI AND VARIA
+	`o\)`: "\u1f42",
+	`O)\`: "\u1f42",
+	`O\)`: "\u1f42",
 
-	`u)\\`: "\u1f52", // GREEK SMALL LETTER UPSILON WITH PSILI AND VARIA
-	`u\\)`: "\u1f52",
-	`U)\\`: "\u1f52",
-	`U\\)`: "\u1f52",
+	`u)\`: "\u1f52", // GREEK SMALL LETTER UPSILON WITH PSILI AND VARIA
+	`u\)`: "\u1f52",
+	`U)\`: "\u1f52",
+	`U\)`: "\u1f52",
 
-	`w)\\`: "\u1f62", // GREEK SMALL LETTER OMEGA WITH PSILI AND VARIA
-	`w\\)`: "\u1f62",
-	`W)\\`: "\u1f62",
-	`W\\)`: "\u1f62",
+	`w)\`: "\u1f62", // GREEK SMALL LETTER OMEGA WITH PSILI AND VARIA
+	`w\)`: "\u1f62",
+	`W)\`: "\u1f62",
+	`W\)`: "\u1f62",
 
-	`*)\\a`: "\u1f0a", // GREEK CAPITAL LETTER ALPHA WITH PSILI AND VARIA
-	`*a)\\`: "\u1f0a",
-	`*a\\)`: "\u1f0a",
-	`*A)\\`: "\u1f0a",
-	`*A\\)`: "\u1f0a",
-	`*)a\\`: "\u1f0a",
-	`*)A\\`: "\u1f0a",
-	`*)\\A`: "\u1f0a",
-	`*\\a)`: "\u1f0a",
-	`*\\A)`: "\u1f0a",
-	`*\\)a`: "\u1f0a",
-	`*\\)A`: "\u1f0a",
+	`*)\a`: "\u1f0a", // GREEK CAPITAL LETTER ALPHA WITH PSILI AND VARIA
+	`*a)\`: "\u1f0a",
+	`*a\)`: "\u1f0a",
+	`*A)\`: "\u1f0a",
+	`*A\)`: "\u1f0a",
+	`*)a\`: "\u1f0a",
+	`*)A\`: "\u1f0a",
+	`*)\A`: "\u1f0a",
+	`*\a)`: "\u1f0a",
+	`*\A)`: "\u1f0a",
+	`*\)a`: "\u1f0a",
+	`*\)A`: "\u1f0a",
 
-	`*)\\e`: "\u1f1a", // GREEK CAPITAL LETTER EPSILON WITH PSILI AND VARIA
-	`*e)\\`: "\u1f1a",
-	`*e\\)`: "\u1f1a",
-	`*E)\\`: "\u1f1a",
-	`*E\\)`: "\u1f1a",
-	`*)e\\`: "\u1f1a",
-	`*)E\\`: "\u1f1a",
-	`*)\\E`: "\u1f1a",
-	`*\\e)`: "\u1f1a",
-	`*\\E)`: "\u1f1a",
-	`*\\)e`: "\u1f1a",
-	`*\\)E`: "\u1f1a",
+	`*)\e`: "\u1f1a", // GREEK CAPITAL LETTER EPSILON WITH PSILI AND VARIA
+	`*e)\`: "\u1f1a",
+	`*e\)`: "\u1f1a",
+	`*E)\`: "\u1f1a",
+	`*E\)`: "\u1f1a",
+	`*)e\`: "\u1f1a",
+	`*)E\`: "\u1f1a",
+	`*)\E`: "\u1f1a",
+	`*\e)`: "\u1f1a",
+	`*\E)`: "\u1f1a",
+	`*\)e`: "\u1f1a",
+	`*\)E`: "\u1f1a",
 
-	`*)\\h`: "\u1f2a", // GREEK CAPITAL LETTER ETA WITH PSILI AND VARIA
-	`*h)\\`: "\u1f2a",
-	`*h\\)`: "\u1f2a",
-	`*H)\\`: "\u1f2a",
-	`*H\\)`: "\u1f2a",
-	`*)h\\`: "\u1f2a",
-	`*)H\\`: "\u1f2a",
-	`*)\\H`: "\u1f2a",
-	`*\\h)`: "\u1f2a",
-	`*\\H)`: "\u1f2a",
-	`*\\)h`: "\u1f2a",
-	`*\\)H`: "\u1f2a",
+	`*)\h`: "\u1f2a", // GREEK CAPITAL LETTER ETA WITH PSILI AND VARIA
+	`*h)\`: "\u1f2a",
+	`*h\)`: "\u1f2a",
+	`*H)\`: "\u1f2a",
+	`*H\)`: "\u1f2a",
+	`*)h\`: "\u1f2a",
+	`*)H\`: "\u1f2a",
+	`*)\H`: "\u1f2a",
+	`*\h)`: "\u1f2a",
+	`*\H)`: "\u1f2a",
+	`*\)h`: "\u1f2a",
+	`*\)H`: "\u1f2a",
 
-	`*)\\i`: "\u1f3a", // GREEK CAPITAL LETTER IOTA WITH PSILI AND VARIA
-	`*i)\\`: "\u1f3a",
-	`*i\\)`: "\u1f3a",
-	`*I)\\`: "\u1f3a",
-	`*I\\)`: "\u1f3a",
-	`*)i\\`: "\u1f3a",
-	`*)I\\`: "\u1f3a",
-	`*)\\I`: "\u1f3a",
-	`*\\i)`: "\u1f3a",
-	`*\\I)`: "\u1f3a",
-	`*\\)i`: "\u1f3a",
-	`*\\)I`: "\u1f3a",
+	`*)\i`: "\u1f3a", // GREEK CAPITAL LETTER IOTA WITH PSILI AND VARIA
+	`*i)\`: "\u1f3a",
+	`*i\)`: "\u1f3a",
+	`*I)\`: "\u1f3a",
+	`*I\)`: "\u1f3a",
+	`*)i\`: "\u1f3a",
+	`*)I\`: "\u1f3a",
+	`*)\I`: "\u1f3a",
+	`*\i)`: "\u1f3a",
+	`*\I)`: "\u1f3a",
+	`*\)i`: "\u1f3a",
+	`*\)I`: "\u1f3a",
 
-	`*)\\o`: "\u1f4a", // GREEK CAPITAL LETTER OMICRON WITH PSILI AND VARIA
-	`*o)\\`: "\u1f4a",
-	`*o\\)`: "\u1f4a",
-	`*O)\\`: "\u1f4a",
-	`*O\\)`: "\u1f4a",
-	`*)o\\`: "\u1f4a",
-	`*)O\\`: "\u1f4a",
-	`*)\\O`: "\u1f4a",
-	`*\\o)`: "\u1f4a",
-	`*\\O)`: "\u1f4a",
-	`*\\)o`: "\u1f4a",
-	`*\\)O`: "\u1f4a",
+	`*)\o`: "\u1f4a", // GREEK CAPITAL LETTER OMICRON WITH PSILI AND VARIA
+	`*o)\`: "\u1f4a",
+	`*o\)`: "\u1f4a",
+	`*O)\`: "\u1f4a",
+	`*O\)`: "\u1f4a",
+	`*)o\`: "\u1f4a",
+	`*)O\`: "\u1f4a",
+	`*)\O`: "\u1f4a",
+	`*\o)`: "\u1f4a",
+	`*\O)`: "\u1f4a",
+	`*\)o`: "\u1f4a",
+	`*\)O`: "\u1f4a",
 
-	`*)\\u`: "\u1f5a", // Invalid
-	`*u\\)`: "\u1f5a",
-	`*u)\\`: "\u1f5a",
-	`*U\\)`: "\u1f5a",
-	`*U)\\`: "\u1f5a",
-	`*)u\\`: "\u1f5a",
-	`*)U\\`: "\u1f5a",
-	`*)\\U`: "\u1f5a",
-	`*\\u)`: "\u1f5a",
-	`*\\U)`: "\u1f5a",
-	`*\\)u`: "\u1f5a",
-	`*\\)U`: "\u1f5a",
+	`*)\u`: "\u1f5a", // Invalid
+	`*u\)`: "\u1f5a",
+	`*u)\`: "\u1f5a",
+	`*U\)`: "\u1f5a",
+	`*U)\`: "\u1f5a",
+	`*)u\`: "\u1f5a",
+	`*)U\`: "\u1f5a",
+	`*)\U`: "\u1f5a",
+	`*\u)`: "\u1f5a",
+	`*\U)`: "\u1f5a",
+	`*\)u`: "\u1f5a",
+	`*\)U`: "\u1f5a",
 
-	`*)\\w`: "\u1f6a", // GREEK CAPITAL LETTER OMEGA WITH PSILI AND VARIA
-	`*w)\\`: "\u1f6a",
-	`*w\\)`: "\u1f6a",
-	`*W)\\`: "\u1f6a",
-	`*W\\)`: "\u1f6a",
-	`*)w\\`: "\u1f6a",
-	`*)W\\`: "\u1f6a",
-	`*)\\W`: "\u1f6a",
-	`*\\w)`: "\u1f6a",
-	`*\\W)`: "\u1f6a",
-	`*\\)w`: "\u1f6a",
-	`*\\)W`: "\u1f6a",
+	`*)\w`: "\u1f6a", // GREEK CAPITAL LETTER OMEGA WITH PSILI AND VARIA
+	`*w)\`: "\u1f6a",
+	`*w\)`: "\u1f6a",
+	`*W)\`: "\u1f6a",
+	`*W\)`: "\u1f6a",
+	`*)w\`: "\u1f6a",
+	`*)W\`: "\u1f6a",
+	`*)\W`: "\u1f6a",
+	`*\w)`: "\u1f6a",
+	`*\W)`: "\u1f6a",
+	`*\)w`: "\u1f6a",
+	`*\)W`: "\u1f6a",
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -872,131 +872,131 @@ var BetacodeMap = map[string]string{
 
 	// Rough breathing and grave accent
 
-	`a(\\`: "\u1f03", // GREEK SMALL LETTER ALPHA WITH DASIA AND VARIA
-	`a\\(`: "\u1f03",
-	`A(\\`: "\u1f03",
-	`A\\(`: "\u1f03",
+	`a(\`: "\u1f03", // GREEK SMALL LETTER ALPHA WITH DASIA AND VARIA
+	`a\(`: "\u1f03",
+	`A(\`: "\u1f03",
+	`A\(`: "\u1f03",
 
-	`e(\\`: "\u1f13", // GREEK SMALL LETTER EPSILON WITH DASIA AND VARIA
-	`e\\(`: "\u1f13",
-	`E(\\`: "\u1f13",
-	`E\\(`: "\u1f13",
+	`e(\`: "\u1f13", // GREEK SMALL LETTER EPSILON WITH DASIA AND VARIA
+	`e\(`: "\u1f13",
+	`E(\`: "\u1f13",
+	`E\(`: "\u1f13",
 
-	`h(\\`: "\u1f23", // GREEK SMALL LETTER ETA WITH DASIA AND VARIA
-	`h\\(`: "\u1f23",
-	`H(\\`: "\u1f23",
-	`H\\(`: "\u1f23",
+	`h(\`: "\u1f23", // GREEK SMALL LETTER ETA WITH DASIA AND VARIA
+	`h\(`: "\u1f23",
+	`H(\`: "\u1f23",
+	`H\(`: "\u1f23",
 
-	`i(\\`: "\u1f33", // GREEK SMALL LETTER IOTA WITH DASIA AND VARIA
-	`i\\(`: "\u1f33",
-	`I(\\`: "\u1f33",
-	`I\\(`: "\u1f33",
+	`i(\`: "\u1f33", // GREEK SMALL LETTER IOTA WITH DASIA AND VARIA
+	`i\(`: "\u1f33",
+	`I(\`: "\u1f33",
+	`I\(`: "\u1f33",
 
-	`o(\\`: "\u1f43", // GREEK SMALL LETTER OMICRON WITH DASIA AND VARIA
-	`o\\(`: "\u1f43",
-	`O(\\`: "\u1f43",
-	`O\\(`: "\u1f43",
+	`o(\`: "\u1f43", // GREEK SMALL LETTER OMICRON WITH DASIA AND VARIA
+	`o\(`: "\u1f43",
+	`O(\`: "\u1f43",
+	`O\(`: "\u1f43",
 
-	`u(\\`: "\u1f53", // GREEK SMALL LETTER UPSILON WITH DASIA AND VARIA
-	`u\\(`: "\u1f53",
-	`U(\\`: "\u1f53",
-	`U\\(`: "\u1f53",
+	`u(\`: "\u1f53", // GREEK SMALL LETTER UPSILON WITH DASIA AND VARIA
+	`u\(`: "\u1f53",
+	`U(\`: "\u1f53",
+	`U\(`: "\u1f53",
 
-	`w(\\`: "\u1f63", // GREEK SMALL LETTER OMEGA WITH DASIA AND VARIA
-	`w\\(`: "\u1f63",
-	`W(\\`: "\u1f63",
-	`W\\(`: "\u1f63",
+	`w(\`: "\u1f63", // GREEK SMALL LETTER OMEGA WITH DASIA AND VARIA
+	`w\(`: "\u1f63",
+	`W(\`: "\u1f63",
+	`W\(`: "\u1f63",
 
-	`*(\\a`: "\u1f0b", // GREEK CAPITAL LETTER ALPHA WITH DASIA AND VARIA
-	`*a(\\`: "\u1f0b",
-	`*a\\(`: "\u1f0b",
-	`*A(\\`: "\u1f0b",
-	`*A\\(`: "\u1f0b",
-	`*(a\\`: "\u1f0b",
-	`*(A\\`: "\u1f0b",
-	`*(\\A`: "\u1f0b",
-	`*\\a(`: "\u1f0b",
-	`*\\A(`: "\u1f0b",
-	`*\\(a`: "\u1f0b",
-	`*\\(A`: "\u1f0b",
+	`*(\a`: "\u1f0b", // GREEK CAPITAL LETTER ALPHA WITH DASIA AND VARIA
+	`*a(\`: "\u1f0b",
+	`*a\(`: "\u1f0b",
+	`*A(\`: "\u1f0b",
+	`*A\(`: "\u1f0b",
+	`*(a\`: "\u1f0b",
+	`*(A\`: "\u1f0b",
+	`*(\A`: "\u1f0b",
+	`*\a(`: "\u1f0b",
+	`*\A(`: "\u1f0b",
+	`*\(a`: "\u1f0b",
+	`*\(A`: "\u1f0b",
 
-	`*(\\e`: "\u1f1b", // GREEK CAPITAL LETTER EPSILON WITH DASIA AND VARIA
-	`*e(\\`: "\u1f1b",
-	`*e\\(`: "\u1f1b",
-	`*E(\\`: "\u1f1b",
-	`*E\\(`: "\u1f1b",
-	`*(e\\`: "\u1f1b",
-	`*(E\\`: "\u1f1b",
-	`*(\\E`: "\u1f1b",
-	`*\\e(`: "\u1f1b",
-	`*\\E(`: "\u1f1b",
-	`*\\(e`: "\u1f1b",
-	`*\\(E`: "\u1f1b",
+	`*(\e`: "\u1f1b", // GREEK CAPITAL LETTER EPSILON WITH DASIA AND VARIA
+	`*e(\`: "\u1f1b",
+	`*e\(`: "\u1f1b",
+	`*E(\`: "\u1f1b",
+	`*E\(`: "\u1f1b",
+	`*(e\`: "\u1f1b",
+	`*(E\`: "\u1f1b",
+	`*(\E`: "\u1f1b",
+	`*\e(`: "\u1f1b",
+	`*\E(`: "\u1f1b",
+	`*\(e`: "\u1f1b",
+	`*\(E`: "\u1f1b",
 
-	`*(\\h`: "\u1f2b", // GREEK CAPITAL LETTER ETA WITH DASIA AND VARIA
-	`*h(\\`: "\u1f2b",
-	`*h\\(`: "\u1f2b",
-	`*H(\\`: "\u1f2b",
-	`*H\\(`: "\u1f2b",
-	`*(h\\`: "\u1f2b",
-	`*(H\\`: "\u1f2b",
-	`*(\\H`: "\u1f2b",
-	`*\\h(`: "\u1f2b",
-	`*\\H(`: "\u1f2b",
-	`*\\(h`: "\u1f2b",
-	`*\\(H`: "\u1f2b",
+	`*(\h`: "\u1f2b", // GREEK CAPITAL LETTER ETA WITH DASIA AND VARIA
+	`*h(\`: "\u1f2b",
+	`*h\(`: "\u1f2b",
+	`*H(\`: "\u1f2b",
+	`*H\(`: "\u1f2b",
+	`*(h\`: "\u1f2b",
+	`*(H\`: "\u1f2b",
+	`*(\H`: "\u1f2b",
+	`*\h(`: "\u1f2b",
+	`*\H(`: "\u1f2b",
+	`*\(h`: "\u1f2b",
+	`*\(H`: "\u1f2b",
 
-	`*(\\i`: "\u1f3b", // GREEK CAPITAL LETTER IOTA WITH DASIA AND VARIA
-	`*i(\\`: "\u1f3b",
-	`*i\\(`: "\u1f3b",
-	`*I(\\`: "\u1f3b",
-	`*I\\(`: "\u1f3b",
-	`*(i\\`: "\u1f3b",
-	`*(I\\`: "\u1f3b",
-	`*(\\I`: "\u1f3b",
-	`*\\i(`: "\u1f3b",
-	`*\\I(`: "\u1f3b",
-	`*\\(i`: "\u1f3b",
-	`*\\(I`: "\u1f3b",
+	`*(\i`: "\u1f3b", // GREEK CAPITAL LETTER IOTA WITH DASIA AND VARIA
+	`*i(\`: "\u1f3b",
+	`*i\(`: "\u1f3b",
+	`*I(\`: "\u1f3b",
+	`*I\(`: "\u1f3b",
+	`*(i\`: "\u1f3b",
+	`*(I\`: "\u1f3b",
+	`*(\I`: "\u1f3b",
+	`*\i(`: "\u1f3b",
+	`*\I(`: "\u1f3b",
+	`*\(i`: "\u1f3b",
+	`*\(I`: "\u1f3b",
 
-	`*(\\o`: "\u1f4b", // GREEK CAPITAL LETTER OMICRON WITH DASIA AND VARIA
-	`*o(\\`: "\u1f4b",
-	`*o\\(`: "\u1f4b",
-	`*O(\\`: "\u1f4b",
-	`*O\\(`: "\u1f4b",
-	`*(o\\`: "\u1f4b",
-	`*(O\\`: "\u1f4b",
-	`*(\\O`: "\u1f4b",
-	`*\\o(`: "\u1f4b",
-	`*\\O(`: "\u1f4b",
-	`*\\(o`: "\u1f4b",
-	`*\\(O`: "\u1f4b",
+	`*(\o`: "\u1f4b", // GREEK CAPITAL LETTER OMICRON WITH DASIA AND VARIA
+	`*o(\`: "\u1f4b",
+	`*o\(`: "\u1f4b",
+	`*O(\`: "\u1f4b",
+	`*O\(`: "\u1f4b",
+	`*(o\`: "\u1f4b",
+	`*(O\`: "\u1f4b",
+	`*(\O`: "\u1f4b",
+	`*\o(`: "\u1f4b",
+	`*\O(`: "\u1f4b",
+	`*\(o`: "\u1f4b",
+	`*\(O`: "\u1f4b",
 
-	`*(\\u`: "\u1f5b", // GREEK CAPITAL LETTER UPSILON WITH DASIA AND VARIA
-	`*u(\\`: "\u1f5b",
-	`*u\\(`: "\u1f5b",
-	`*U(\\`: "\u1f5b",
-	`*U\\(`: "\u1f5b",
-	`*(u\\`: "\u1f5b",
-	`*(U\\`: "\u1f5b",
-	`*(\\U`: "\u1f5b",
-	`*\\u(`: "\u1f5b",
-	`*\\U(`: "\u1f5b",
-	`*\\(u`: "\u1f5b",
-	`*\\(U`: "\u1f5b",
+	`*(\u`: "\u1f5b", // GREEK CAPITAL LETTER UPSILON WITH DASIA AND VARIA
+	`*u(\`: "\u1f5b",
+	`*u\(`: "\u1f5b",
+	`*U(\`: "\u1f5b",
+	`*U\(`: "\u1f5b",
+	`*(u\`: "\u1f5b",
+	`*(U\`: "\u1f5b",
+	`*(\U`: "\u1f5b",
+	`*\u(`: "\u1f5b",
+	`*\U(`: "\u1f5b",
+	`*\(u`: "\u1f5b",
+	`*\(U`: "\u1f5b",
 
-	`*(\\w`: "\u1f6b", // GREEK CAPITAL LETTER OMEGA WITH DASIA AND VARIA
-	`*w(\\`: "\u1f6b",
-	`*w\\(`: "\u1f6b",
-	`*W(\\`: "\u1f6b",
-	`*W\\(`: "\u1f6b",
-	`*(w\\`: "\u1f6b",
-	`*(W\\`: "\u1f6b",
-	`*(\\W`: "\u1f6b",
-	`*\\w(`: "\u1f6b",
-	`*\\W(`: "\u1f6b",
-	`*\\(w`: "\u1f6b",
-	`*\\(W`: "\u1f6b",
+	`*(\w`: "\u1f6b", // GREEK CAPITAL LETTER OMEGA WITH DASIA AND VARIA
+	`*w(\`: "\u1f6b",
+	`*w\(`: "\u1f6b",
+	`*W(\`: "\u1f6b",
+	`*W\(`: "\u1f6b",
+	`*(w\`: "\u1f6b",
+	`*(W\`: "\u1f6b",
+	`*(\W`: "\u1f6b",
+	`*\w(`: "\u1f6b",
+	`*\W(`: "\u1f6b",
+	`*\(w`: "\u1f6b",
+	`*\(W`: "\u1f6b",
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -1477,75 +1477,68 @@ var BetacodeMap = map[string]string{
 
 	// Smooth breathing, acute accent, and ypogegrammeni
 
-	`a)\|`:  "\u1f82", // GREEK SMALL LETTER ALPHA WITH PSILI AND VARIA AND YPOGEGRAMMENI
-	`a)\\|`: "\u1f82",
-	`a)|\\`: "\u1f82",
-	`a\\)|`: "\u1f82",
-	`a\\|)`: "\u1f82",
-	`a|)\\`: "\u1f82",
-	`a|\\)`: "\u1f82",
-	`A)\\|`: "\u1f82",
-	`A)|\\`: "\u1f82",
-	`A\\)|`: "\u1f82",
-	`A\\|)`: "\u1f82",
-	`A|)\\`: "\u1f82",
-	`A|\\)`: "\u1f82",
+	`a)\|`: "\u1f82", // GREEK SMALL LETTER ALPHA WITH PSILI AND VARIA AND YPOGEGRAMMENI
+	`a)|\`: "\u1f82",
+	`a\)|`: "\u1f82",
+	`a\|)`: "\u1f82",
+	`a|)\`: "\u1f82",
+	`a|\)`: "\u1f82",
+	`A)\|`: "\u1f82",
+	`A)|\`: "\u1f82",
+	`A\)|`: "\u1f82",
+	`A\|)`: "\u1f82",
+	`A|)\`: "\u1f82",
+	`A|\)`: "\u1f82",
 
-	`h)\|`: "\u1f92", // GREEK SMALL LETTER ETA WITH PSILI AND VARIA AND YPOGEGRAMMENI
+	`*)\a|`: "\u1f8a", // GREEK CAPITAL LETTER ALPHA WITH PSILI AND VARIA AND PROSGEGRAMMENI
+	`*a)|\`: "\u1f8a",
+	`*a\)|`: "\u1f8a",
+	`*a\|)`: "\u1f8a",
+	`*a|)\`: "\u1f8a",
+	`*a|\)`: "\u1f8a",
+	`*A)\|`: "\u1f8a",
+	`*A)|\`: "\u1f8a",
+	`*A\)|`: "\u1f8a",
+	`*A\|)`: "\u1f8a",
+	`*A|)\`: "\u1f8a",
+	`*A|\)`: "\u1f8a",
+	`*)a\|`: "\u1f8a",
+	`*)a|\`: "\u1f8a",
+	`*)A\|`: "\u1f8a",
+	`*)A|\`: "\u1f8a",
+	`*)\A|`: "\u1f8a",
+	`*)\|a`: "\u1f8a",
+	`*)\|A`: "\u1f8a",
+	`*)|a\`: "\u1f8a",
+	`*)|A\`: "\u1f8a",
+	`*)|\a`: "\u1f8a",
+	`*)|\A`: "\u1f8a",
+	`*\a)|`: "\u1f8a",
+	`*\a|)`: "\u1f8a",
+	`*\A)|`: "\u1f8a",
+	`*\A|)`: "\u1f8a",
+	`*\)a|`: "\u1f8a",
+	`*\)A|`: "\u1f8a",
+	`*\)|a`: "\u1f8a",
+	`*\)|A`: "\u1f8a",
+	`*\|)a`: "\u1f8a",
+	`*\|)A`: "\u1f8a",
+	`*\|a)`: "\u1f8a",
+	`*\|A)`: "\u1f8a",
+	`*|a)\`: "\u1f8a",
+	`*|a\)`: "\u1f8a",
+	`*|A)\`: "\u1f8a",
+	`*|A\)`: "\u1f8a",
+	`*|)a\`: "\u1f8a",
+	`*|)A\`: "\u1f8a",
+	`*|)\a`: "\u1f8a",
+	`*|)\A`: "\u1f8a",
+	`*|\)a`: "\u1f8a",
+	`*|\)A`: "\u1f8a",
+	`*|\a)`: "\u1f8a",
+	`*|\A)`: "\u1f8a",
 
-	`w)\|`: "\u1fa2", // GREEK SMALL LETTER OMEGA WITH PSILI AND VARIA AND YPOGEGRAMMENI
-
-	`*)\\a|`: "\u1f8a", // GREEK CAPITAL LETTER ALPHA WITH PSILI AND VARIA AND PROSGEGRAMMENI
-	`*a)|\\`: "\u1f8a",
-	`*a\\)|`: "\u1f8a",
-	`*a\\|)`: "\u1f8a",
-	`*a|)\\`: "\u1f8a",
-	`*a|\\)`: "\u1f8a",
-	`*A)\\|`: "\u1f8a",
-	`*A)|\\`: "\u1f8a",
-	`*A\\)|`: "\u1f8a",
-	`*A\\|)`: "\u1f8a",
-	`*A|)\\`: "\u1f8a",
-	`*A|\\)`: "\u1f8a",
-	`*)a\\|`: "\u1f8a",
-	`*)a|\\`: "\u1f8a",
-	`*)A\\|`: "\u1f8a",
-	`*)A|\\`: "\u1f8a",
-	`*)\\A|`: "\u1f8a",
-	`*)\\|a`: "\u1f8a",
-	`*)\\|A`: "\u1f8a",
-	`*)|a\\`: "\u1f8a",
-	`*)|A\\`: "\u1f8a",
-	`*)|\\a`: "\u1f8a",
-	`*)|\\A`: "\u1f8a",
-	`*\\a)|`: "\u1f8a",
-	`*\\a|)`: "\u1f8a",
-	`*\\A)|`: "\u1f8a",
-	`*\\A|)`: "\u1f8a",
-	`*\\)a|`: "\u1f8a",
-	`*\\)A|`: "\u1f8a",
-	`*\\)|a`: "\u1f8a",
-	`*\\)|A`: "\u1f8a",
-	`*\\|)a`: "\u1f8a",
-	`*\\|)A`: "\u1f8a",
-	`*\\|a)`: "\u1f8a",
-	`*\\|A)`: "\u1f8a",
-	`*|a)\\`: "\u1f8a",
-	`*|a\\)`: "\u1f8a",
-	`*|A)\\`: "\u1f8a",
-	`*|A\\)`: "\u1f8a",
-	`*|)a\\`: "\u1f8a",
-	`*|)A\\`: "\u1f8a",
-	`*|)\\a`: "\u1f8a",
-	`*|)\\A`: "\u1f8a",
-	`*|\\)a`: "\u1f8a",
-	`*|\\)A`: "\u1f8a",
-	`*|\\a)`: "\u1f8a",
-	`*|\\A)`: "\u1f8a",
-
-	`*)\h|`: "\u1f9a", // GREEK CAPITAL LETTER ETA WITH PSILI AND VARIA AND PROSGEGRAMMENI
-
-	`*)\w|`: "\u1faa", // GREEK CAPITAL LETTER OMEGA WITH PSILI AND VARIA AND PROSGEGRAMMENI
+	// `*)\w|`: "\u1faa", // GREEK CAPITAL LETTER OMEGA WITH PSILI AND VARIA AND PROSGEGRAMMENI
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -1562,192 +1555,191 @@ var BetacodeMap = map[string]string{
 
 	// Rough breathing, grave accent, and ypogegrammeni
 
-	`a(\\|`: "\u1f83", // GREEK SMALL LETTER ALPHA WITH DASIA AND VARIA AND YPOGEGRAMMENI
-	`a(|\\`: "\u1f83",
-	`a\\(|`: "\u1f83",
-	`a\\|(`: "\u1f83",
-	`a|(\\`: "\u1f83",
-	`a|\\(`: "\u1f83",
-	`A(\\|`: "\u1f83",
-	`A(|\\`: "\u1f83",
-	`A\\(|`: "\u1f83",
-	`A\\|(`: "\u1f83",
-	`A|(\\`: "\u1f83",
-	`A|\\(`: "\u1f83",
+	`a(\|`: "\u1f83", // GREEK SMALL LETTER ALPHA WITH DASIA AND VARIA AND YPOGEGRAMMENI
+	`a(|\`: "\u1f83",
+	`a\(|`: "\u1f83",
+	`a\|(`: "\u1f83",
+	`a|(\`: "\u1f83",
+	`a|\(`: "\u1f83",
+	`A(\|`: "\u1f83",
+	`A(|\`: "\u1f83",
+	`A\(|`: "\u1f83",
+	`A\|(`: "\u1f83",
+	`A|(\`: "\u1f83",
+	`A|\(`: "\u1f83",
 
-	`h)\\|`: "\u1f93", // GREEK SMALL LETTER ETA WITH DASIA AND VARIA AND YPOGEGRAMMENI
-	`h)|\\`: "\u1f93",
-	`h\\)|`: "\u1f93",
-	`h\\|)`: "\u1f93",
-	`h|)\\`: "\u1f93",
-	`h|\\)`: "\u1f93",
-	`H)\\|`: "\u1f93",
-	`H)|\\`: "\u1f93",
-	`H\\)|`: "\u1f93",
-	`H\\|)`: "\u1f93",
-	`H|)\\`: "\u1f93",
-	`H|\\)`: "\u1f93",
+	`h)\|`: "\u1f93", // GREEK SMALL LETTER ETA WITH DASIA AND VARIA AND YPOGEGRAMMENI
+	`h)|\`: "\u1f93",
+	`h\)|`: "\u1f93",
+	`h\|)`: "\u1f93",
+	`h|)\`: "\u1f93",
+	`h|\)`: "\u1f93",
+	`H)\|`: "\u1f93",
+	`H)|\`: "\u1f93",
+	`H\)|`: "\u1f93",
+	`H\|)`: "\u1f93",
+	`H|)\`: "\u1f93",
+	`H|\)`: "\u1f93",
 
-	`w)\\|`: "\u1fa3", // GREEK SMALL LETTER OMEGA WITH DASIA AND VARIA AND YPOGEGRAMMENI
-	`w)|\\`: "\u1fa3",
-	`w\\)|`: "\u1fa3",
-	`w\\|)`: "\u1fa3",
-	`w|)\\`: "\u1fa3",
-	`w|\\)`: "\u1fa3",
-	`W)\\|`: "\u1fa3",
-	`W)|\\`: "\u1fa3",
-	`W\\)|`: "\u1fa3",
-	`W\\|)`: "\u1fa3",
-	`W|)\\`: "\u1fa3",
-	`W|\\)`: "\u1fa3",
+	`w)\|`: "\u1fa3", // GREEK SMALL LETTER OMEGA WITH DASIA AND VARIA AND YPOGEGRAMMENI
+	`w)|\`: "\u1fa3",
+	`w\)|`: "\u1fa3",
+	`w\|)`: "\u1fa3",
+	`w|)\`: "\u1fa3",
+	`w|\)`: "\u1fa3",
+	`W)\|`: "\u1fa3",
+	`W)|\`: "\u1fa3",
+	`W\)|`: "\u1fa3",
+	`W\|)`: "\u1fa3",
+	`W|)\`: "\u1fa3",
+	`W|\)`: "\u1fa3",
 
-	`*(\\\a|`: "\u1f8b", // GREEK CAPITAL LETTER ALPHA WITH DASIA AND VARIA AND PROSGEGRAMMENI
-	`*a(\\|`:  "\u1f8b",
-	`*a(|\\`:  "\u1f8b",
-	`*a\\(|`:  "\u1f8b",
-	`*a\\|(`:  "\u1f8b",
-	`*a|(\\`:  "\u1f8b",
-	`*a|\\(`:  "\u1f8b",
-	`*A(\\|`:  "\u1f8b",
-	`*A(|\\`:  "\u1f8b",
-	`*A\\(|`:  "\u1f8b",
-	`*A\\|(`:  "\u1f8b",
-	`*A|(\\`:  "\u1f8b",
-	`*A|\\(`:  "\u1f8b",
-	`*(a\\|`:  "\u1f8b",
-	`*(a|\\`:  "\u1f8b",
-	`*(A\\|`:  "\u1f8b",
-	`*(A|\\`:  "\u1f8b",
-	`*(\\a|`:  "\u1f8b",
-	`*(\\A|`:  "\u1f8b",
-	`*(\\|a`:  "\u1f8b",
-	`*(\\|A`:  "\u1f8b",
-	`*(|a\\`:  "\u1f8b",
-	`*(|A\\`:  "\u1f8b",
-	`*(|\\a`:  "\u1f8b",
-	`*(|\\A`:  "\u1f8b",
-	`*\\a(|`:  "\u1f8b",
-	`*\\a|(`:  "\u1f8b",
-	`*\\A(|`:  "\u1f8b",
-	`*\\A|(`:  "\u1f8b",
-	`*\\(a|`:  "\u1f8b",
-	`*\\(A|`:  "\u1f8b",
-	`*\\(|a`:  "\u1f8b",
-	`*\\(|A`:  "\u1f8b",
-	`*\\|a(`:  "\u1f8b",
-	`*\\|A(`:  "\u1f8b",
-	`*\\|(a`:  "\u1f8b",
-	`*\\|(A`:  "\u1f8b",
-	`*|a(\\`:  "\u1f8b",
-	`*|a\\(`:  "\u1f8b",
-	`*|A(\\`:  "\u1f8b",
-	`*|A\\(`:  "\u1f8b",
-	`*|(a\\`:  "\u1f8b",
-	`*|(A\\`:  "\u1f8b",
-	`*|(\\a`:  "\u1f8b",
-	`*|(\\A`:  "\u1f8b",
-	`*|\\a(`:  "\u1f8b",
-	`*|\\A(`:  "\u1f8b",
-	`*|\\(a`:  "\u1f8b",
-	`*|\\(A`:  "\u1f8b",
+	`*(\\a|`: "\u1f8b", // GREEK CAPITAL LETTER ALPHA WITH DASIA AND VARIA AND PROSGEGRAMMENI
+	`*a(\|`:  "\u1f8b",
+	`*a(|\`:  "\u1f8b",
+	`*a\(|`:  "\u1f8b",
+	`*a\|(`:  "\u1f8b",
+	`*a|(\`:  "\u1f8b",
+	`*a|\(`:  "\u1f8b",
+	`*A(\|`:  "\u1f8b",
+	`*A(|\`:  "\u1f8b",
+	`*A\(|`:  "\u1f8b",
+	`*A\|(`:  "\u1f8b",
+	`*A|(\`:  "\u1f8b",
+	`*A|\(`:  "\u1f8b",
+	`*(a\|`:  "\u1f8b",
+	`*(a|\`:  "\u1f8b",
+	`*(A\|`:  "\u1f8b",
+	`*(A|\`:  "\u1f8b",
+	`*(\a|`:  "\u1f8b",
+	`*(\A|`:  "\u1f8b",
+	`*(\|a`:  "\u1f8b",
+	`*(\|A`:  "\u1f8b",
+	`*(|a\`:  "\u1f8b",
+	`*(|A\`:  "\u1f8b",
+	`*(|\a`:  "\u1f8b",
+	`*(|\A`:  "\u1f8b",
+	`*\a(|`:  "\u1f8b",
+	`*\a|(`:  "\u1f8b",
+	`*\A(|`:  "\u1f8b",
+	`*\A|(`:  "\u1f8b",
+	`*\(a|`:  "\u1f8b",
+	`*\(A|`:  "\u1f8b",
+	`*\(|a`:  "\u1f8b",
+	`*\(|A`:  "\u1f8b",
+	`*\|a(`:  "\u1f8b",
+	`*\|A(`:  "\u1f8b",
+	`*\|(a`:  "\u1f8b",
+	`*\|(A`:  "\u1f8b",
+	`*|a(\`:  "\u1f8b",
+	`*|a\(`:  "\u1f8b",
+	`*|A(\`:  "\u1f8b",
+	`*|A\(`:  "\u1f8b",
+	`*|(a\`:  "\u1f8b",
+	`*|(A\`:  "\u1f8b",
+	`*|(\a`:  "\u1f8b",
+	`*|(\A`:  "\u1f8b",
+	`*|\a(`:  "\u1f8b",
+	`*|\A(`:  "\u1f8b",
+	`*|\(a`:  "\u1f8b",
+	`*|\(A`:  "\u1f8b",
 
-	`*)\\h|`: "\u1f9b", // GREEK CAPITAL LETTER ETA WITH DASIA AND VARIA AND PROSGEGRAMMENI
-	`*h)\\|`: "\u1f9b",
-	`*h)|\\`: "\u1f9b",
-	`*h\\)|`: "\u1f9b",
-	`*h\\|)`: "\u1f9b",
-	`*h|)\\`: "\u1f9b",
-	`*h|\\)`: "\u1f9b",
-	`*H)\\|`: "\u1f9b",
-	`*H)|\\`: "\u1f9b",
-	`*H\\)|`: "\u1f9b",
-	`*H\\|)`: "\u1f9b",
-	`*H|)\\`: "\u1f9b",
-	`*H|\\)`: "\u1f9b",
-	`*)h\\|`: "\u1f9b",
-	`*)h|\\`: "\u1f9b",
-	`*)H\\|`: "\u1f9b",
-	`*)H|\\`: "\u1f9b",
-	`*)\\H|`: "\u1f9b",
-	`*)\\|h`: "\u1f9b",
-	`*)\\|H`: "\u1f9b",
-	`*)|h\\`: "\u1f9b",
-	`*)|H\\`: "\u1f9b",
-	`*)|\\h`: "\u1f9b",
-	`*)|\\H`: "\u1f9b",
-	`*\\h)|`: "\u1f9b",
-	`*\\h|)`: "\u1f9b",
-	`*\\H)|`: "\u1f9b",
-	`*\\H|)`: "\u1f9b",
-	`*\\)h|`: "\u1f9b",
-	`*\\)H|`: "\u1f9b",
-	`*\\)|h`: "\u1f9b",
-	`*\\)|H`: "\u1f9b",
-	`*\\|)h`: "\u1f9b",
-	`*\\|)H`: "\u1f9b",
-	`*\\|h)`: "\u1f9b",
-	`*\\|H)`: "\u1f9b",
-	`*|h)\\`: "\u1f9b",
-	`*|h\\)`: "\u1f9b",
-	`*|H)\\`: "\u1f9b",
-	`*|H\\)`: "\u1f9b",
-	`*|)h\\`: "\u1f9b",
-	`*|)H\\`: "\u1f9b",
-	`*|)\\h`: "\u1f9b",
-	`*|)\\H`: "\u1f9b",
-	`*|\\)h`: "\u1f9b",
-	`*|\\)H`: "\u1f9b",
-	`*|\\h)`: "\u1f9b",
-	`*|\\H)`: "\u1f9b",
+	`*)\h|`: "\u1f9b", // GREEK CAPITAL LETTER ETA WITH DASIA AND VARIA AND PROSGEGRAMMENI
+	`*h)|\`: "\u1f9b",
+	`*h\)|`: "\u1f9b",
+	`*h\|)`: "\u1f9b",
+	`*h|)\`: "\u1f9b",
+	`*h|\)`: "\u1f9b",
+	`*H)\|`: "\u1f9b",
+	`*H)|\`: "\u1f9b",
+	`*H\)|`: "\u1f9b",
+	`*H\|)`: "\u1f9b",
+	`*H|)\`: "\u1f9b",
+	`*H|\)`: "\u1f9b",
+	`*)h\|`: "\u1f9b",
+	`*)h|\`: "\u1f9b",
+	`*)H\|`: "\u1f9b",
+	`*)H|\`: "\u1f9b",
+	`*)\H|`: "\u1f9b",
+	`*)\|h`: "\u1f9b",
+	`*)\|H`: "\u1f9b",
+	`*)|h\`: "\u1f9b",
+	`*)|H\`: "\u1f9b",
+	`*)|\h`: "\u1f9b",
+	`*)|\H`: "\u1f9b",
+	`*\h)|`: "\u1f9b",
+	`*\h|)`: "\u1f9b",
+	`*\H)|`: "\u1f9b",
+	`*\H|)`: "\u1f9b",
+	`*\)h|`: "\u1f9b",
+	`*\)H|`: "\u1f9b",
+	`*\)|h`: "\u1f9b",
+	`*\)|H`: "\u1f9b",
+	`*\|)h`: "\u1f9b",
+	`*\|)H`: "\u1f9b",
+	`*\|h)`: "\u1f9b",
+	`*\|H)`: "\u1f9b",
+	`*|h)\`: "\u1f9b",
+	`*|h\)`: "\u1f9b",
+	`*|H)\`: "\u1f9b",
+	`*|H\)`: "\u1f9b",
+	`*|)h\`: "\u1f9b",
+	`*|)H\`: "\u1f9b",
+	`*|)\h`: "\u1f9b",
+	`*|)\H`: "\u1f9b",
+	`*|\)h`: "\u1f9b",
+	`*|\)H`: "\u1f9b",
+	`*|\h)`: "\u1f9b",
+	`*|\H)`: "\u1f9b",
 
-	`*)\\w|`: "\u1fab", // GREEK CAPITAL LETTER OMEGA WITH DASIA AND VARIA AND PROSGEGRAMMENI
-	`*w)\\|`: "\u1fab",
-	`*w)|\\`: "\u1fab",
-	`*w\\)|`: "\u1fab",
-	`*w\\|)`: "\u1fab",
-	`*w|)\\`: "\u1fab",
-	`*w|\\)`: "\u1fab",
-	`*W)\\|`: "\u1fab",
-	`*W)|\\`: "\u1fab",
-	`*W\\)|`: "\u1fab",
-	`*W\\|)`: "\u1fab",
-	`*W|)\\`: "\u1fab",
-	`*W|\\)`: "\u1fab",
-	`*)w\\|`: "\u1fab",
-	`*)w|\\`: "\u1fab",
-	`*)W\\|`: "\u1fab",
-	`*)W|\\`: "\u1fab",
-	`*)\\W|`: "\u1fab",
-	`*)\\|w`: "\u1fab",
-	`*)\\|W`: "\u1fab",
-	`*)|w\\`: "\u1fab",
-	`*)|W\\`: "\u1fab",
-	`*)|\\w`: "\u1fab",
-	`*)|\\W`: "\u1fab",
-	`*\\w)|`: "\u1fab",
-	`*\\w|)`: "\u1fab",
-	`*\\W)|`: "\u1fab",
-	`*\\W|)`: "\u1fab",
-	`*\\)w|`: "\u1fab",
-	`*\\)W|`: "\u1fab",
-	`*\\)|w`: "\u1fab",
-	`*\\)|W`: "\u1fab",
-	`*\\|)w`: "\u1fab",
-	`*\\|)W`: "\u1fab",
-	`*\\|w)`: "\u1fab",
-	`*\\|W)`: "\u1fab",
-	`*|w)\\`: "\u1fab",
-	`*|w\\)`: "\u1fab",
-	`*|W)\\`: "\u1fab",
-	`*|W\\)`: "\u1fab",
-	`*|)w\\`: "\u1fab",
-	`*|)W\\`: "\u1fab",
-	`*|)\\w`: "\u1fab",
-	`*|)\\W`: "\u1fab",
-	`*|\\)w`: "\u1fab",
-	`*|\\)W`: "\u1fab",
-	`*|\\w)`: "\u1fab",
-	`*|\\W)`: "\u1fab",
+	`*)\w|`: "\u1fab", // GREEK CAPITAL LETTER OMEGA WITH DASIA AND VARIA AND PROSGEGRAMMENI
+	`*w)\|`: "\u1fab",
+	`*w)|\`: "\u1fab",
+	`*w\)|`: "\u1fab",
+	`*w\|)`: "\u1fab",
+	`*w|)\`: "\u1fab",
+	`*w|\)`: "\u1fab",
+	`*W)\|`: "\u1fab",
+	`*W)|\`: "\u1fab",
+	`*W\)|`: "\u1fab",
+	`*W\|)`: "\u1fab",
+	`*W|)\`: "\u1fab",
+	`*W|\)`: "\u1fab",
+	`*)w\|`: "\u1fab",
+	`*)w|\`: "\u1fab",
+	`*)W\|`: "\u1fab",
+	`*)W|\`: "\u1fab",
+	`*)\W|`: "\u1fab",
+	`*)\|w`: "\u1fab",
+	`*)\|W`: "\u1fab",
+	`*)|w\`: "\u1fab",
+	`*)|W\`: "\u1fab",
+	`*)|\w`: "\u1fab",
+	`*)|\W`: "\u1fab",
+	`*\w)|`: "\u1fab",
+	`*\w|)`: "\u1fab",
+	`*\W)|`: "\u1fab",
+	`*\W|)`: "\u1fab",
+	`*\)w|`: "\u1fab",
+	`*\)W|`: "\u1fab",
+	`*\)|w`: "\u1fab",
+	`*\)|W`: "\u1fab",
+	`*\|)w`: "\u1fab",
+	`*\|)W`: "\u1fab",
+	`*\|w)`: "\u1fab",
+	`*\|W)`: "\u1fab",
+	`*|w)\`: "\u1fab",
+	`*|w\)`: "\u1fab",
+	`*|W)\`: "\u1fab",
+	`*|W\)`: "\u1fab",
+	`*|)w\`: "\u1fab",
+	`*|)W\`: "\u1fab",
+	`*|)\w`: "\u1fab",
+	`*|)\W`: "\u1fab",
+	`*|\)w`: "\u1fab",
+	`*|\)W`: "\u1fab",
+	`*|\w)`: "\u1fab",
+	`*|\W)`: "\u1fab",
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -2576,10 +2568,10 @@ var BetacodeMap = map[string]string{
 	`*I+`: "\u03aa",
 	`*+I`: "\u03aa",
 
-	`i\\+`: "\u1fd2", // GREEK SMALL LETTER IOTA WITH DIALYTIKA AND VARIA
-	`i+\\`: "\u1fd2",
-	`I\\+`: "\u1fd2",
-	`I+\\`: "\u1fd2",
+	`i\+`: "\u1fd2", // GREEK SMALL LETTER IOTA WITH DIALYTIKA AND VARIA
+	`i+\`: "\u1fd2",
+	`I\+`: "\u1fd2",
+	`I+\`: "\u1fd2",
 
 	`i/+`: "\u1fd3", // GREEK SMALL LETTER IOTA WITH DIALYTIKA AND OXIA
 	`i+/`: "\u1fd3",
@@ -2599,10 +2591,10 @@ var BetacodeMap = map[string]string{
 	`*U+`: "\u03ab",
 	`*+U`: "\u03ab",
 
-	`u\\+`: "\u1fe2", // GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND VARIA
-	`u+\\`: "\u1fe2",
-	`U\\+`: "\u1fe2",
-	`U+\\`: "\u1fe2",
+	`u\+`: "\u1fe2", // GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND VARIA
+	`u+\`: "\u1fe2",
+	`U\+`: "\u1fe2",
+	`U+\`: "\u1fe2",
 
 	`u/+`: "\u1fe3", // GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND OXIA
 	`u+/`: "\u1fe3",
@@ -2653,17 +2645,17 @@ var BetacodeMap = map[string]string{
 
 	// Breve
 
-	"a\\'": "\u1fb1", // GREEK SMALL LETTER ALPHA WITH MACRON
-	`a'`:   "\u1fb1",
-	`A'`:   "\u1fb1",
+	`a\'`: "\u1fb1", // GREEK SMALL LETTER ALPHA WITH MACRON
+	`a'`:  "\u1fb1",
+	`A'`:  "\u1fb1",
 
-	"i\\'": "\u1fd1", // GREEK SMALL LETTER IOTA WITH MACRON
-	`i'`:   "\u1fd1",
-	`I'`:   "\u1fd1",
+	`i\'`: "\u1fd1", // GREEK SMALL LETTER IOTA WITH MACRON
+	`i'`:  "\u1fd1",
+	`I'`:  "\u1fd1",
 
-	"u\\'": "\u1fe1", // GREEK SMALL LETTER UPSILON WITH MACRON
-	`u'`:   "\u1fe1",
-	`U'`:   "\u1fe1",
+	`u\'`: "\u1fe1", // GREEK SMALL LETTER UPSILON WITH MACRON
+	`u'`:  "\u1fe1",
+	`U'`:  "\u1fe1",
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -2680,10 +2672,9 @@ var BetacodeMap = map[string]string{
 
 	// Basic punctuation
 
-	":":   "\u00b7", // MIDDLE DOT
-	"\\'": "\u2019", // RIGHT SINGLE QUOTATION MARK
-	`'`:   "\u2019",
-	"-":   "\u2010", // HYPHEN
-	"_":   "\u2014", // EM DASH
-
+	":": "\u00b7", // MIDDLE DOT
+	`'`: "\u2019", // RIGHT SINGLE QUOTATION MARK
+	"-": "\u2010", // HYPHEN
+	"_": "\u2014", // EM DASH
+	" ": " ",
 }

@@ -61,18 +61,17 @@ func TestBetaToUni(t *testing.T) {
 		{`th=s2`, `τῆς`, "Numeric Sigma Id"},
 		{`th=s3 tou=`, `τῆϲ τοῦ`, "Keep Non-Final Sigma Numeric"},
 		{`th=s tou=`, `τῆς τοῦ`, "Final Sigma Word"},
-		{`th=s\ttou=`, `τῆς\tτοῦ`, "Final Sigma Whitespace"},
+		{`th=s	tou=`, "τῆς\tτοῦ", "Final Sigma Whitespace"},
 		{`th=s; tou=`, `τῆς; τοῦ`, "Final Sigma Punctuation"},
-		{`th=s\' tou=`, `τῆσ’ τοῦ`, "Final Sigma Apostrophe"},
-		{`analabo/ntes de\ kaq\' e(/kaston`, `αναλαβόντες δὲ καθ’ ἕκαστον`, "Multi Word"},
+		{`th=s' tou=`, `τῆσ’ τοῦ`, "Final Sigma Apostrophe"},
+		{`analabo/ntes de\ kaq' e(/kaston`, `αναλαβόντες δὲ καθ’ ἕκαστον`, "Multi Word"},
 		{`e)/oiken h)\ dida/skonti; nh\`, `ἔοικεν ἢ διδάσκοντι; νὴ`, "Punctuation Semicolon"},
 		{`dh=lon: oi(/ te`, `δῆλον· οἵ τε`, "Punctuation Colon"},
 		{`e/)oiken h\) dida/skonti; nh\ a=|)i+\`, `ἔοικεν ἢ διδάσκοντι; νὴ ᾆῒ`, "Out of Order"},
 		{`*)/eforos ka*)/ei\ a/)lloi`, `Ἔφορος καἜὶ ἄλλοι`, "Capital Out of Order"},
 		{`*)/eforos ka*)/ei\ a/)lloi *)h\|`, `Ἔφορος καἜὶ ἄλλοι ᾛ`, "Capital Out of Order with Iota"},
-		{`e)n d\' e)\pes\' w)keanw=|`, `ἐν δ’ ἒπεσ’ ὠκεανῷ`, "Strict Correct"},
-		{`e)n d\' e)\pes\' w)keanw|=`, `ἐν δ’ ἒπεσ’ ὠκεανῳ=`, "Strict Incorrect"},
-		{`e)n d\' e)\pes\' w)keanw|=`, `ἐν δ’ ἒπεσ’ ὠκεανῷ`, "Unstrict"},
+		{`e)n d' e)\pes' w)keanw=|`, `ἐν δ’ ἒπεσ’ ὠκεανῷ`, "Strict Correct"},
+		{`e)n d' e)\pes' w)keanw|=`, `ἐν δ’ ἒπεσ’ ὠκεανῷ`, "Unstrict"},
 		{`*)e/foros ka*e)/i\ a/)lloi *)\h|`, `Ἔφορος καἜὶ ἄλλοι ᾛ`, "Unstrict Capitalization"},
 	}
 	for _, table := range tables {
@@ -85,7 +84,7 @@ func TestBetaToUni(t *testing.T) {
 
 		if bcun != un {
 			t.Errorf(
-				"Case %s failed.\nConversion of %q to %q was incorrect.\nGot: %q\nWant: %q.",
+				"Case %s failed.\nConversion of \"%s\" to \"%s\" was incorrect.\nGot: \"%s\"\nWant: \"%s\".",
 				table.description, table.beta, table.uni, bcun, un,
 			)
 		} else {
