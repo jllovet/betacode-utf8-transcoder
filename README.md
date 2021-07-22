@@ -1,4 +1,5 @@
 # Beta Code and UTF-8 Transcoder
+[![Go Reference](https://pkg.go.dev/badge/github.com/jllovet/betacode-utf8-transcoder.svg)](https://pkg.go.dev/github.com/jllovet/betacode-utf8-transcoder)
 
 This package allows you to convert texts that are in Beta Code to UTF-8 and back. Its primary purpose is to support working with Ancient Greek datasets that used Beta Code as their encoding.
 
