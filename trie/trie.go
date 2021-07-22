@@ -82,6 +82,12 @@ func (t *Trie) Search(k string) (s string, ok bool) {
 	}
 	return s, true
 }
+
+// longestPrefixNode returns the node that contains the longest prefix
+// available in the trie of the argument k
+// It provides a similar experience to referencing a key, value pair in a map
+// where both the node value and a bool are returned if the key is found;
+// otherwise, it returns an empty string and false.
 func (t *Trie) longestPrefixNode(k string) (n *Node, ok bool) {
 	l := utf8.RuneCountInString(k)
 	if l < 1 {
@@ -101,6 +107,10 @@ func (t *Trie) longestPrefixNode(k string) (n *Node, ok bool) {
 	return currentNode, true
 }
 
+// LongestPrefix returns the key, value pair of the longest prefix
+// available in the trie of the argument s.
+// If there is no path in the trie that contains a prefix of the
+// argument s, then empty strings are returned for the key and value
 func (t *Trie) LongestPrefix(s string) (k string, v string) {
 	if n, ok := t.longestPrefixNode(s); !ok {
 		return "", ""
