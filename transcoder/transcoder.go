@@ -91,6 +91,9 @@ func BetaToUni(beta string) (uni string, err error) {
 	return uni, nil
 }
 
+// findFinalIndex determines the final index of the string that can be examined
+// when taking a slice from a string by indices. This is a helper function to
+// avoid going out of bounds when reading in beta code characters from a string.
 func findFinalIndex(beta string, idx int) int {
 	var finalIndex int
 	if idx+maxBetaTokenLen > utf8.RuneCountInString(beta) {
