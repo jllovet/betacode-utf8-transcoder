@@ -105,9 +105,9 @@ func findFinalIndex(beta string, idx int) int {
 }
 
 // findLongestBetaTokenLen returns the maximum length of a single betacode token.
-func findLongestBetaTokenLen(BETACODE_MAP map[string]string) (maxBetaTokenLen int) {
+func findLongestBetaTokenLen(betacodeMap map[string]string) (maxBetaTokenLen int) {
 	maxBetaTokenLen = -1
-	for beta := range BETACODE_MAP {
+	for beta := range betacodeMap {
 		if utf8.RuneCountInString(beta) > maxBetaTokenLen {
 			maxBetaTokenLen = utf8.RuneCountInString(beta)
 		}
