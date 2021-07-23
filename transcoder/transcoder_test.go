@@ -1,6 +1,8 @@
 package transcoder_test
 
 import (
+	"fmt"
+	"log"
 	"testing"
 
 	"github.com/jllovet/betacode-utf8-transcoder/transcoder"
@@ -91,4 +93,24 @@ func TestBetaToUni(t *testing.T) {
 			t.Logf("Case %s passed", table.description)
 		}
 	}
+}
+
+func ExampleUniToBeta() {
+	u := `ἄλφα`
+	b, err := transcoder.UniToBeta(u)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(u, "becomes", b)
+	// Output: ἄλφα becomes a)/lfa
+}
+
+func ExampleBetaToUni() {
+	b := `a)/lfa`
+	u, err := transcoder.BetaToUni(b)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(b, "becomes", u)
+	// Output: a)/lfa becomes ἄλφα
 }
