@@ -129,8 +129,12 @@ var betaPunctuation = map[string]bool{
 	` `: true,
 }
 
-// convertFinalSigma returns whether the penultimate character is a sigma
-// and is in a context where it should be treated as a medial sigma.
+// convertFinalSigma returns true if the penultimate character is a
+// sigma that should be transformed into a final sigma.
+// Generally, a sigma in the last position should be converted into
+// a the final sigma form 'ς'. However, if the last letter is followed
+// by an apostrophe, as in contractions, then the sigma should remain in
+// its medial form 'σ'.
 func convertFinalSigma(text string) (p bool) {
 	l := utf8.RuneCountInString(text) // length in runes
 
