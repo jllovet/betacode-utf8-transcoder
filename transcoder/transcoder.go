@@ -58,7 +58,6 @@ var BetaToUniTrie trie.Trie = initBetaToUniTrie()
 // BetaToUni converts a betacode string to a unicode string
 func BetaToUni(beta string) (uni string, err error) {
 	t := []string{}
-	// var i int
 	var pwb bool // possible word boundary
 
 	i := 0
