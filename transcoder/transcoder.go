@@ -118,7 +118,7 @@ var maxBetaTokenLen int = findLongestBetaTokenLen(BetacodeMap)
 // Special characters that need their own references to rewrite with
 var finalLowerCaseSigma string = `ς`  // `ς`, `s2`, \u03c2
 var medialLowerCaseSigma string = `σ` // `σ`, `s`,  \u03c3
-var betaApostrophe string = `’`       // `’`, `\'` \u2019
+var betaApostrophe string = `’`       // `’`, `'` \u2019
 var betaPunctuation = map[string]bool{
 	`:`: true, // `·`, `:`,  \u00b7
 	`'`: true, // `’`, `'`,  \u2019
