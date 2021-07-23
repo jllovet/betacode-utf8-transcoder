@@ -75,6 +75,9 @@ func main() {
 
 ## Resources
 
+If this project helped you with a project of yours, I'd love if you threw a coffee my way to fuel enhancements and similar projects in the future.
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jllovet)
+
 ### Encodings and Transcording Background and Specs
 
 - [Joel on Software - The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
