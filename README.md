@@ -13,7 +13,7 @@ go get github.com/jllovet/betacode-utf8-transcoder
 
 ## Usage
 
-The most frequent uses you'll have for this package are using `BetaToUni` and `UniToBeta`.
+The most frequent uses you'll have for this package are converting text between betacode and utf8 using `BetaToUni` and `UniToBeta`.
 
 ### Example Usage of BetaToUni
 
