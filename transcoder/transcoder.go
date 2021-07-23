@@ -11,7 +11,7 @@ import (
 	// "golang.org/x/text/unicode/norm"
 )
 
-// UniToBeta converts a unicode string to a betacode string
+// UniToBeta converts a unicode string to a betacode string.
 func UniToBeta(uni string) (beta string, err error) {
 	u := UnicodeMap
 
@@ -42,7 +42,7 @@ func UniToBeta(uni string) (beta string, err error) {
 // initBetaToUniTrie creates a trie for converting from betacode to unicode.
 // It takes a bool value to indicate whether the betacode parsing is strict.
 // If true, diacritics must be in the officially specified order:
-// breathing, accent, iota subscript / dieresis
+// breathing, accent, iota subscript / dieresis.
 // If false, diacritic parsing is more generous, allowing any order after the
 // initial letter or asterisk (which still must be in the first position).
 func initBetaToUniTrie() (t trie.Trie) {
@@ -55,7 +55,7 @@ func initBetaToUniTrie() (t trie.Trie) {
 
 var BetaToUniTrie trie.Trie = initBetaToUniTrie()
 
-// BetaToUni converts a betacode string to a unicode string
+// BetaToUni converts a betacode string to a unicode string.
 func BetaToUni(beta string) (uni string, err error) {
 	t := []string{}
 	var pwb bool // possible word boundary
@@ -104,7 +104,7 @@ func findFinalIndex(beta string, idx int) int {
 	return finalIndex
 }
 
-// findLongestBetaTokenLen returns the maximum length of a single betacode token
+// findLongestBetaTokenLen returns the maximum length of a single betacode token.
 func findLongestBetaTokenLen(BETACODE_MAP map[string]string) (maxBetaTokenLen int) {
 	maxBetaTokenLen = -1
 	for beta := range BETACODE_MAP {
@@ -130,14 +130,14 @@ var betaPunctuation = map[string]bool{
 }
 
 // convertFinalSigma returns whether the penultimate character is a sigma
-// and is in a context where it should be treated as a medial sigma
+// and is in a context where it should be treated as a medial sigma.
 func convertFinalSigma(text string) (p bool) {
 	l := utf8.RuneCountInString(text) // length in runes
 
 	var ms bool // Last letter is medial lower-case sigma
 	var ll bool // Last character is a letter
 	var ba bool // Last character is a beta apostrophe
-	n := 1
+	n := 1      // index counting in runes
 	for _, r := range text {
 		if n == l-1 {
 			if string(r) == medialLowerCaseSigma {
