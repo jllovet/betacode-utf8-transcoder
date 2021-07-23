@@ -130,35 +130,31 @@ var betaPunctuation = map[string]bool{
 // convertFinalSigma returns whether the penultimate character is a sigma
 // and is in a context where it should be treated as a medial sigma
 func convertFinalSigma(text string) (p bool) {
-
 	l := utf8.RuneCountInString(text) // length in runes
 
-	var mlcs bool // Last letter is medial lower-case sigma
-	var lcl bool  // Last character is a letter
-	var ba bool   // Last character is a beta apostrophe
-
+	var ms bool // Last letter is medial lower-case sigma
+	var ll bool // Last character is a letter
+	var ba bool // Last character is a beta apostrophe
 	n := 1
 	for _, r := range text {
 		if n == l-1 {
 			if string(r) == medialLowerCaseSigma {
-				mlcs = true // Last letter is medial lower-case sigma
+				ms = true // Last letter is medial lower-case sigma
 			}
 		}
 		if n == l {
 			if unicode.IsLetter(r) {
-				lcl = true // Last character is a letter
+				ll = true // Last character is a letter
 			}
 			if string(r) == betaApostrophe {
 				ba = true // Last character is a beta apostrophe
 			}
-
 		}
 		n += 1
 	}
-
 	p = l > 1 &&
-		mlcs &&
-		!lcl &&
+		ms &&
+		!ll &&
 		!ba
 
 	return p
