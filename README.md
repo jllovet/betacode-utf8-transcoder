@@ -11,6 +11,68 @@ This project owes a great deal to [github.com/matgrioni/betacode](https://github
 go get github.com/jllovet/betacode-utf8-transcoder
 ```
 
+## Usage
+
+The most frequent uses you'll have for this package are using `BetaToUni` and `UniToBeta`.
+
+### Example Usage of BetaToUni
+
+```golang
+// BetaToUni(beta string) (uni string, err error)
+package main
+
+import (
+    "fmt"
+    "log"
+
+    "github.com/jllovet/betacode-utf8-transcoder"
+)
+
+func main() {
+    b := `a)/lfa`
+    u, err := transcoder.BetaToUni(b)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(b, "becomes", u)
+}
+```
+
+```shell
+> go run main.go
+> a)/lfa becomes ἄλφα
+```
+
+### Example Usage of UniToBeta
+
+```golang
+// UniToBeta(uni string) (beta string, err error)
+package main
+
+import (
+    "fmt"
+    "log"
+
+    "github.com/jllovet/betacode-utf8-transcoder"
+)
+
+func main() {
+    u := `ἄλφα`
+    b, err := transcoder.UniToBeta(u)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(u, "becomes", b)
+}
+```
+
+```shell
+> go run main.go
+> ἄλφα becomes a)/lfa
+```
+
+
+
 ## Resources
 
 ### Encodings and Transcording Background and Specs
