@@ -40,9 +40,9 @@ func Init() *Trie {
 // the leaf node in the trie is updated with the value v provided.
 func (t *Trie) Update(k string, v string) {
 	currentNode := t.Root
-	l := utf8.RuneCountInString(k)
-	for i := 0; i < l; i++ {
-		s := string(k[i])
+	lenRunes := utf8.RuneCountInString(k)
+	for idx := 0; idx < lenRunes; idx++ {
+		s := string(k[idx])
 		if _, ok := currentNode.Children[s]; !ok {
 			child := &Node{
 				Data:     s,
@@ -67,9 +67,9 @@ func (t *Trie) Update(k string, v string) {
 // otherwise, it returns an empty string and false.
 func (t *Trie) Search(k string) (s string, ok bool) {
 	currentNode := t.Root
-	l := utf8.RuneCountInString(k)
-	for i := 0; i < l; i++ {
-		s := string(k[i])
+	lenRunes := utf8.RuneCountInString(k)
+	for idx := 0; idx < lenRunes; idx++ {
+		s := string(k[idx])
 		if _, ok := currentNode.Children[s]; ok {
 			currentNode = currentNode.Children[s]
 		} else {
@@ -89,16 +89,16 @@ func (t *Trie) Search(k string) (s string, ok bool) {
 // where both the node value and a bool are returned if the key is found;
 // otherwise, it returns an empty string and false.
 func (t *Trie) longestPrefixNode(k string) (n *Node, ok bool) {
-	l := utf8.RuneCountInString(k)
-	if l < 1 {
+	lenRunes := utf8.RuneCountInString(k)
+	if lenRunes < 1 {
 		return &Node{}, false
 	}
 	currentNode := t.Root
-	for i := 0; i < l; i++ {
-		s := string(k[i])
+	for idx := 0; idx < lenRunes; idx++ {
+		s := string(k[idx])
 		if _, ok := currentNode.Children[s]; ok {
 			currentNode = currentNode.Children[s]
-		} else if i == 0 {
+		} else if idx == 0 {
 			return &Node{}, false
 		} else {
 			return currentNode, true
