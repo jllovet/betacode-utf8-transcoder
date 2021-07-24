@@ -8,7 +8,6 @@ import (
 	"unicode/utf8"
 
 	"github.com/jllovet/betacode-utf8-transcoder/trie"
-	// "golang.org/x/text/unicode/norm"
 )
 
 // UniToBeta converts a unicode string to a betacode string.
@@ -77,7 +76,7 @@ func BetaToUni(beta string) (uni string, err error) {
 			n += len(k)      // move index ahead to next betacode character
 		} else {
 			pwb = true
-			// no match found in conversion trie, keep current value
+			// not found in conversion trie, keep current value
 			t = append(t, string(beta[n]))
 			n += 1
 		}
