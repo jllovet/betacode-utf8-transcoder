@@ -57,36 +57,39 @@ var BetaToUniTrie trie.Trie = initBetaToUniTrie()
 
 // BetaToUni converts a betacode string to a unicode string.
 func BetaToUni(beta string) (uni string, err error) {
-	t := []string{}
-	var pwb bool // possible word boundary
-
-	i := 0
-	for i < utf8.RuneCountInString(beta) {
-		if pwb && convertFinalSigma(strings.Join(t, "")) {
+	t := []string{} // transformed text
+	var pwb bool    // possible word boundary
+	n := 0          // index
+	for n < utf8.RuneCountInString(beta) {
+		// change medial to final sigma if followed by punctuation/whitespace
+		if pwb && isFinalSigma(strings.Join(t, "")) {
 			t[len(t)-2] = finalLowerCaseSigma
 		}
-		k, v := BetaToUniTrie.LongestPrefix(beta[i:findFinalIndex(beta, i)])
+		// look up betacode character in converstion trie
+		k, v := BetaToUniTrie.LongestPrefix(beta[n:findFinalIndex(beta, n)])
 		if err != nil {
 			return "", err
 		}
 		if k != "" {
-			pwb = betaPunctuation[string(beta[i])] // checks for presence of current character in set
-			t = append(t, v)
-			i += len(k)
+			// check whether word ends in punctuation/whitespace
+			pwb = betaPunctuation[string(beta[n])]
+			t = append(t, v) // append unicode value found in trie
+			n += len(k)      // move index ahead to next betacode character
 		} else {
 			pwb = true
-			t = append(t, string(beta[i]))
-			i += 1
+			// no match found in conversion trie, keep current value
+			t = append(t, string(beta[n]))
+			n += 1
 		}
 	}
 
-	// Check one last time in case there is some whitespace or punctuation at the
-	// end and check if the last character is a sigma.
-	if pwb && convertFinalSigma(strings.Join(t, "")) {
-		t[len(t)-2] = finalLowerCaseSigma
-	} else if len(t) > 0 && t[len(t)-1] == medialLowerCaseSigma {
+	// Check last charcter in slice of transformed strings.
+	// If it is a medial lowercase sigma `σ`,
+	// then it should be changed into a final-position lowercase sigma `ς`.
+	if len(t) > 0 && t[len(t)-1] == medialLowerCaseSigma {
 		t[len(t)-1] = finalLowerCaseSigma
 	}
+
 	uni = strings.Join(t, "")
 	return uni, nil
 }
@@ -129,39 +132,39 @@ var betaPunctuation = map[string]bool{
 	` `: true,
 }
 
-// convertFinalSigma returns true if the penultimate character is a
+// isFinalSigma returns true if the penultimate character is a
 // sigma that should be transformed into a final sigma.
 // Generally, a sigma in the last position should be converted into
 // a the final sigma form 'ς'. However, if the last letter is followed
 // by an apostrophe, as in contractions, then the sigma should remain in
 // its medial form 'σ'.
-func convertFinalSigma(text string) (p bool) {
-	l := utf8.RuneCountInString(text) // length in runes
+func isFinalSigma(text string) (p bool) {
+	lenRunes := utf8.RuneCountInString(text) // length in runes
 
-	var ms bool // Last letter is medial lower-case sigma
-	var ll bool // Last character is a letter
-	var ba bool // Last character is a beta apostrophe
-	n := 1      // index counting in runes
+	var lastLetterIsMedialSigma bool  // Last letter is medial lower-case sigma
+	var lastCharIsLetter bool         // Last character is a letter
+	var lastCharIsBetaApostrophe bool // Last character is a beta apostrophe
+	n := 1                            // index counting in runes
 	for _, r := range text {
-		if n == l-1 {
+		if n == lenRunes-1 {
 			if string(r) == medialLowerCaseSigma {
-				ms = true // Last letter is medial lower-case sigma
+				lastLetterIsMedialSigma = true
 			}
 		}
-		if n == l {
+		if n == lenRunes {
 			if unicode.IsLetter(r) {
-				ll = true // Last character is a letter
+				lastCharIsLetter = true
 			}
 			if string(r) == betaApostrophe {
-				ba = true // Last character is a beta apostrophe
+				lastCharIsBetaApostrophe = true
 			}
 		}
 		n += 1
 	}
-	p = l > 1 &&
-		ms &&
-		!ll &&
-		!ba
+	p = lenRunes > 1 &&
+		lastLetterIsMedialSigma &&
+		!lastCharIsLetter &&
+		!lastCharIsBetaApostrophe
 
 	return p
 }
