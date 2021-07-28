@@ -21,7 +21,7 @@ type Node struct {
 
 // Init creates a Trie pre-initialized with a pointer to the root Node
 func Init() *Trie {
-	t := &Trie{
+	trie := &Trie{
 		Root: &Node{
 			Data:     "",
 			Prefix:   "",
@@ -31,15 +31,15 @@ func Init() *Trie {
 			Val:      "",
 		},
 	}
-	return t
+	return trie
 }
 
 // Update adds a key, value pair to the Trie
 // It functions similarly to a key, value pair in a map
 // Once all of the letters of the key have been exhausted, the Val attribute of
 // the leaf node in the trie is updated with the value v provided.
-func (t *Trie) Update(k string, v string) {
-	currentNode := t.Root
+func (trie *Trie) Update(k string, v string) {
+	currentNode := trie.Root
 	lenRunes := utf8.RuneCountInString(k)
 	for idx := 0; idx < lenRunes; idx++ {
 		s := string(k[idx])
@@ -65,8 +65,8 @@ func (t *Trie) Update(k string, v string) {
 // It provides a similar experience to referencing a key, value pair in a map
 // where both the string value and a bool are returned if the key is found;
 // otherwise, it returns an empty string and false.
-func (t *Trie) Search(k string) (s string, ok bool) {
-	currentNode := t.Root
+func (trie *Trie) Search(k string) (s string, ok bool) {
+	currentNode := trie.Root
 	lenRunes := utf8.RuneCountInString(k)
 	for idx := 0; idx < lenRunes; idx++ {
 		s := string(k[idx])
@@ -88,12 +88,12 @@ func (t *Trie) Search(k string) (s string, ok bool) {
 // It provides a similar experience to referencing a key, value pair in a map
 // where both the node value and a bool are returned if the key is found;
 // otherwise, it returns an empty string and false.
-func (t *Trie) longestPrefixNode(k string) (n *Node, ok bool) {
+func (trie *Trie) longestPrefixNode(k string) (n *Node, ok bool) {
 	lenRunes := utf8.RuneCountInString(k)
 	if lenRunes < 1 {
 		return &Node{}, false
 	}
-	currentNode := t.Root
+	currentNode := trie.Root
 	for idx := 0; idx < lenRunes; idx++ {
 		s := string(k[idx])
 		if _, ok := currentNode.Children[s]; ok {
@@ -111,8 +111,8 @@ func (t *Trie) longestPrefixNode(k string) (n *Node, ok bool) {
 // available in the trie of the argument s.
 // If there is no path in the trie that contains a prefix of the
 // argument s, then empty strings are returned for the key and value
-func (t *Trie) LongestPrefix(s string) (k string, v string) {
-	if n, ok := t.longestPrefixNode(s); !ok {
+func (trie *Trie) LongestPrefix(s string) (k string, v string) {
+	if n, ok := trie.longestPrefixNode(s); !ok {
 		return "", ""
 	} else {
 		return n.Key, n.Val
