@@ -6,17 +6,17 @@ import (
 
 // Trie represents a trie and contains a pointer to the root node
 type Trie struct {
-	Root *Node
+	Root *Node `json:"root,omitempty"`
 }
 
 // Node represents a single node in a trie, usually representing a character
 type Node struct {
-	Data     string
-	Prefix   string
-	IsEnd    bool
-	Children map[string]*Node
-	Key      string
-	Val      string
+	Data     string           `json:"data,omitempty"`
+	Prefix   string           `json:"prefix,omitempty"`
+	IsEnd    bool             `json:"is_end,omitempty"`
+	Children map[string]*Node `json:"children,omitempty"`
+	Key      string           `json:"key,omitempty"`
+	Val      string           `json:"val,omitempty"`
 }
 
 // Init creates a Trie pre-initialized with a pointer to the root Node
